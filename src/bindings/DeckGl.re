@@ -7,11 +7,18 @@ module Layers = {
       sourcePosition: position,
       targetPosition: position,
     };
+    type info = {
+      object_: string,
+      x: int,
+      y: int
+    }
     type obj = {
       id: string,
       data: array(data),
-      getColor: list(int),
+      getColor: (int, int, int),
       getWidth: int,
+      onClick: info => unit,
+      pickable: bool
     };
     [@bs.module "@deck.gl/layers"] [@bs.new]
     external create: obj => t = "LineLayer";
