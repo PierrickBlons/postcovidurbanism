@@ -1,0 +1,16 @@
+{
+  "schemaPath": "./graphql_schema.json",
+  "projects": {
+    "backend":{
+      "name": "Backend",
+      "schemaPath": "./graphql_schema.json"
+    }
+  },
+  "extensions": {
+    "endpoints": {
+      "staging": {
+        "url": "http://postcovidurbanism.eastus.azurecontainer.io/v1/graphql"
+      }
+    }
+  }
+}
