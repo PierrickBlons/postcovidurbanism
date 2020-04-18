@@ -10,11 +10,14 @@ module Layers = {
     type obj = {
       id: string,
       data: array(data),
+      getColor: list(int),
+      getWidth: int,
     };
     [@bs.module "@deck.gl/layers"] [@bs.new]
     external create: obj => t = "LineLayer";
   };
 };
+
 type viewport = {
   longitude: float,
   latitude: float,
