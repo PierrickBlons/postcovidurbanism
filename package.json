@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "scripts": {
     "postinstall": "yarn get-schema",
-    "start": "parcel ./src/index.html",
-    "build": "parcel build ./src/index.html",
+    "start": "react-scripts start",
+    "prebuild": "yarn bsb:build",
+    "build": "react-scripts build",
     "bsb:build": "bsb -clean-world -make-world",
-    "bsb:start": "bsb -make-world -w -ws _ ",
+    "bsb:start": "bsb -make-world -w ",
     "bsb:clean": "bsb -clean-world",
     "get-schema": "yarn graphql get-schema",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -20,18 +21,35 @@
   "license": "MIT",
   "dependencies": {
     "@apollo/react-hooks": "^3.1.4",
+    "@deck.gl/core": "^8.1.1",
+    "@deck.gl/layers": "^8.1.1",
+    "@deck.gl/react": "^8.1.1",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
+    "react-map-gl": "^5.2.3",
     "reason-apollo": "^0.19.0",
     "reason-apollo-hooks": "^6.0.1",
     "reason-react": ">=0.7.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.9.0",
     "@baransu/graphql_ppx_re": "^0.7.1",
     "bs-platform": "^7.2.2",
     "bsb-js": "^1.1.7",
     "graphql-cli": "^3.0.14",
     "graphql_ppx": "^0.2.8",
-    "parcel-bundler": "^1.12.4"
+    "react-scripts": "^3.4.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

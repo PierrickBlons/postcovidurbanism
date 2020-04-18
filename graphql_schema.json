@@ -17,8 +17,8 @@
           "description": "query root",
           "fields": [
             {
-              "name": "test",
-              "description": "fetch data from the table: \"test\"",
+              "name": "proposal",
+              "description": "fetch data from the table: \"proposal\"",
               "args": [
                 {
                   "name": "distinct_on",
@@ -31,7 +31,7 @@
                       "name": null,
                       "ofType": {
                         "kind": "ENUM",
-                        "name": "test_select_column",
+                        "name": "proposal_select_column",
                         "ofType": null
                       }
                     }
@@ -69,7 +69,7 @@
                       "name": null,
                       "ofType": {
                         "kind": "INPUT_OBJECT",
-                        "name": "test_order_by",
+                        "name": "proposal_order_by",
                         "ofType": null
                       }
                     }
@@ -81,7 +81,7 @@
                   "description": "filter the rows returned",
                   "type": {
                     "kind": "INPUT_OBJECT",
-                    "name": "test_bool_exp",
+                    "name": "proposal_bool_exp",
                     "ofType": null
                   },
                   "defaultValue": null
@@ -98,7 +98,7 @@
                     "name": null,
                     "ofType": {
                       "kind": "OBJECT",
-                      "name": "test",
+                      "name": "proposal",
                       "ofType": null
                     }
                   }
@@ -108,8 +108,8 @@
               "deprecationReason": null
             },
             {
-              "name": "test_aggregate",
-              "description": "fetch aggregated fields from the table: \"test\"",
+              "name": "proposal_aggregate",
+              "description": "fetch aggregated fields from the table: \"proposal\"",
               "args": [
                 {
                   "name": "distinct_on",
@@ -122,7 +122,7 @@
                       "name": null,
                       "ofType": {
                         "kind": "ENUM",
-                        "name": "test_select_column",
+                        "name": "proposal_select_column",
                         "ofType": null
                       }
                     }
@@ -160,7 +160,7 @@
                       "name": null,
                       "ofType": {
                         "kind": "INPUT_OBJECT",
-                        "name": "test_order_by",
+                        "name": "proposal_order_by",
                         "ofType": null
                       }
                     }
@@ -172,7 +172,7 @@
                   "description": "filter the rows returned",
                   "type": {
                     "kind": "INPUT_OBJECT",
-                    "name": "test_bool_exp",
+                    "name": "proposal_bool_exp",
                     "ofType": null
                   },
                   "defaultValue": null
@@ -183,7 +183,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "OBJECT",
-                  "name": "test_aggregate",
+                  "name": "proposal_aggregate",
                   "ofType": null
                 }
               },
@@ -191,8 +191,8 @@
               "deprecationReason": null
             },
             {
-              "name": "test_by_pk",
-              "description": "fetch data from the table: \"test\" using primary key columns",
+              "name": "proposal_by_pk",
+              "description": "fetch data from the table: \"proposal\" using primary key columns",
               "args": [
                 {
                   "name": "id",
@@ -211,7 +211,7 @@
               ],
               "type": {
                 "kind": "OBJECT",
-                "name": "test",
+                "name": "proposal",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -225,14 +225,32 @@
         },
         {
           "kind": "ENUM",
-          "name": "test_select_column",
-          "description": "select columns of table \"test\"",
+          "name": "proposal_select_column",
+          "description": "select columns of table \"proposal\"",
           "fields": null,
           "inputFields": null,
           "interfaces": null,
           "enumValues": [
             {
+              "name": "description",
+              "description": "column name",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "id",
+              "description": "column name",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "location",
+              "description": "column name",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "title",
               "description": "column name",
               "isDeprecated": false,
               "deprecationReason": null
@@ -252,12 +270,42 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "test_order_by",
-          "description": "ordering options when selecting data from \"test\"",
+          "name": "proposal_order_by",
+          "description": "ordering options when selecting data from \"proposal\"",
           "fields": null,
           "inputFields": [
             {
+              "name": "description",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
               "name": "id",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "location",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "title",
               "description": null,
               "type": {
                 "kind": "ENUM",
@@ -320,8 +368,8 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "test_bool_exp",
-          "description": "Boolean expression to filter rows from the table \"test\". All fields are combined with a logical 'AND'.",
+          "name": "proposal_bool_exp",
+          "description": "Boolean expression to filter rows from the table \"proposal\". All fields are combined with a logical 'AND'.",
           "fields": null,
           "inputFields": [
             {
@@ -332,7 +380,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "test_bool_exp",
+                  "name": "proposal_bool_exp",
                   "ofType": null
                 }
               },
@@ -343,7 +391,7 @@
               "description": null,
               "type": {
                 "kind": "INPUT_OBJECT",
-                "name": "test_bool_exp",
+                "name": "proposal_bool_exp",
                 "ofType": null
               },
               "defaultValue": null
@@ -356,9 +404,19 @@
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "test_bool_exp",
+                  "name": "proposal_bool_exp",
                   "ofType": null
                 }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "description",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "String_comparison_exp",
+                "ofType": null
               },
               "defaultValue": null
             },
@@ -371,8 +429,225 @@
                 "ofType": null
               },
               "defaultValue": null
+            },
+            {
+              "name": "location",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "point_comparison_exp",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "title",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "String_comparison_exp",
+                "ofType": null
+              },
+              "defaultValue": null
             }
           ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "String_comparison_exp",
+          "description": "expression to compare columns of type String. All fields are combined with logical 'AND'.",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "_eq",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_gt",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_gte",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_ilike",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_in",
+              "description": null,
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  }
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_is_null",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_like",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_lt",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_lte",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_neq",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_nilike",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_nin",
+              "description": null,
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  }
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_nlike",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_nsimilar",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_similar",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "SCALAR",
+          "name": "String",
+          "description": "The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.",
+          "fields": null,
+          "inputFields": null,
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "SCALAR",
+          "name": "Boolean",
+          "description": "The `Boolean` scalar type represents `true` or `false`.",
+          "fields": null,
+          "inputFields": null,
           "interfaces": null,
           "enumValues": null,
           "possibleTypes": null
@@ -505,9 +780,126 @@
           "possibleTypes": null
         },
         {
+          "kind": "INPUT_OBJECT",
+          "name": "point_comparison_exp",
+          "description": "expression to compare columns of type point. All fields are combined with logical 'AND'.",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "_eq",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "point",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_gt",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "point",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_gte",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "point",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_in",
+              "description": null,
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "SCALAR",
+                    "name": "point",
+                    "ofType": null
+                  }
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_is_null",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_lt",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "point",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_lte",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "point",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_neq",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "point",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_nin",
+              "description": null,
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "SCALAR",
+                    "name": "point",
+                    "ofType": null
+                  }
+                }
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
           "kind": "SCALAR",
-          "name": "Boolean",
-          "description": "The `Boolean` scalar type represents `true` or `false`.",
+          "name": "point",
+          "description": null,
           "fields": null,
           "inputFields": null,
           "interfaces": null,
@@ -516,9 +908,21 @@
         },
         {
           "kind": "OBJECT",
-          "name": "test",
-          "description": "columns and relationships of \"test\"",
+          "name": "proposal",
+          "description": "columns and relationships of \"proposal\"",
           "fields": [
+            {
+              "name": "description",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
             {
               "name": "id",
               "description": null,
@@ -534,6 +938,34 @@
               },
               "isDeprecated": false,
               "deprecationReason": null
+            },
+            {
+              "name": "location",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "point",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "title",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
             }
           ],
           "inputFields": null,
@@ -543,8 +975,8 @@
         },
         {
           "kind": "OBJECT",
-          "name": "test_aggregate",
-          "description": "aggregated selection of \"test\"",
+          "name": "proposal_aggregate",
+          "description": "aggregated selection of \"proposal\"",
           "fields": [
             {
               "name": "aggregate",
@@ -552,7 +984,7 @@
               "args": [],
               "type": {
                 "kind": "OBJECT",
-                "name": "test_aggregate_fields",
+                "name": "proposal_aggregate_fields",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -573,7 +1005,7 @@
                     "name": null,
                     "ofType": {
                       "kind": "OBJECT",
-                      "name": "test",
+                      "name": "proposal",
                       "ofType": null
                     }
                   }
@@ -590,8 +1022,8 @@
         },
         {
           "kind": "OBJECT",
-          "name": "test_aggregate_fields",
-          "description": "aggregate fields of \"test\"",
+          "name": "proposal_aggregate_fields",
+          "description": "aggregate fields of \"proposal\"",
           "fields": [
             {
               "name": "count",
@@ -608,7 +1040,7 @@
                       "name": null,
                       "ofType": {
                         "kind": "ENUM",
-                        "name": "test_select_column",
+                        "name": "proposal_select_column",
                         "ofType": null
                       }
                     }
@@ -633,6 +1065,100 @@
               },
               "isDeprecated": false,
               "deprecationReason": null
+            },
+            {
+              "name": "max",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "proposal_max_fields",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "min",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "proposal_min_fields",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "proposal_max_fields",
+          "description": "aggregate max on columns",
+          "fields": [
+            {
+              "name": "description",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "title",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "proposal_min_fields",
+          "description": "aggregate min on columns",
+          "fields": [
+            {
+              "name": "description",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "title",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
             }
           ],
           "inputFields": null,
@@ -646,8 +1172,8 @@
           "description": "mutation root",
           "fields": [
             {
-              "name": "delete_test",
-              "description": "delete data from the table: \"test\"",
+              "name": "delete_proposal",
+              "description": "delete data from the table: \"proposal\"",
               "args": [
                 {
                   "name": "where",
@@ -657,7 +1183,7 @@
                     "name": null,
                     "ofType": {
                       "kind": "INPUT_OBJECT",
-                      "name": "test_bool_exp",
+                      "name": "proposal_bool_exp",
                       "ofType": null
                     }
                   },
@@ -666,15 +1192,15 @@
               ],
               "type": {
                 "kind": "OBJECT",
-                "name": "test_mutation_response",
+                "name": "proposal_mutation_response",
                 "ofType": null
               },
               "isDeprecated": false,
               "deprecationReason": null
             },
             {
-              "name": "insert_test",
-              "description": "insert data into the table: \"test\"",
+              "name": "insert_proposal",
+              "description": "insert data into the table: \"proposal\"",
               "args": [
                 {
                   "name": "objects",
@@ -690,7 +1216,7 @@
                         "name": null,
                         "ofType": {
                           "kind": "INPUT_OBJECT",
-                          "name": "test_insert_input",
+                          "name": "proposal_insert_input",
                           "ofType": null
                         }
                       }
@@ -703,7 +1229,7 @@
                   "description": "on conflict condition",
                   "type": {
                     "kind": "INPUT_OBJECT",
-                    "name": "test_on_conflict",
+                    "name": "proposal_on_conflict",
                     "ofType": null
                   },
                   "defaultValue": null
@@ -711,22 +1237,22 @@
               ],
               "type": {
                 "kind": "OBJECT",
-                "name": "test_mutation_response",
+                "name": "proposal_mutation_response",
                 "ofType": null
               },
               "isDeprecated": false,
               "deprecationReason": null
             },
             {
-              "name": "update_test",
-              "description": "update data of the table: \"test\"",
+              "name": "update_proposal",
+              "description": "update data of the table: \"proposal\"",
               "args": [
                 {
                   "name": "_set",
                   "description": "sets the columns of the filtered rows to the given values",
                   "type": {
                     "kind": "INPUT_OBJECT",
-                    "name": "test_set_input",
+                    "name": "proposal_set_input",
                     "ofType": null
                   },
                   "defaultValue": null
@@ -739,7 +1265,7 @@
                     "name": null,
                     "ofType": {
                       "kind": "INPUT_OBJECT",
-                      "name": "test_bool_exp",
+                      "name": "proposal_bool_exp",
                       "ofType": null
                     }
                   },
@@ -748,7 +1274,7 @@
               ],
               "type": {
                 "kind": "OBJECT",
-                "name": "test_mutation_response",
+                "name": "proposal_mutation_response",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -762,8 +1288,8 @@
         },
         {
           "kind": "OBJECT",
-          "name": "test_mutation_response",
-          "description": "response of any mutation on the table \"test\"",
+          "name": "proposal_mutation_response",
+          "description": "response of any mutation on the table \"proposal\"",
           "fields": [
             {
               "name": "affected_rows",
@@ -796,7 +1322,7 @@
                     "name": null,
                     "ofType": {
                       "kind": "OBJECT",
-                      "name": "test",
+                      "name": "proposal",
                       "ofType": null
                     }
                   }
@@ -813,16 +1339,46 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "test_insert_input",
-          "description": "input type for inserting data into table \"test\"",
+          "name": "proposal_insert_input",
+          "description": "input type for inserting data into table \"proposal\"",
           "fields": null,
           "inputFields": [
+            {
+              "name": "description",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
             {
               "name": "id",
               "description": null,
               "type": {
                 "kind": "SCALAR",
                 "name": "uuid",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "location",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "point",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "title",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
                 "ofType": null
               },
               "defaultValue": null
@@ -834,8 +1390,8 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "test_on_conflict",
-          "description": "on conflict condition type for table \"test\"",
+          "name": "proposal_on_conflict",
+          "description": "on conflict condition type for table \"proposal\"",
           "fields": null,
           "inputFields": [
             {
@@ -846,7 +1402,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "ENUM",
-                  "name": "test_constraint",
+                  "name": "proposal_constraint",
                   "ofType": null
                 }
               },
@@ -866,7 +1422,7 @@
                     "name": null,
                     "ofType": {
                       "kind": "ENUM",
-                      "name": "test_update_column",
+                      "name": "proposal_update_column",
                       "ofType": null
                     }
                   }
@@ -879,7 +1435,7 @@
               "description": null,
               "type": {
                 "kind": "INPUT_OBJECT",
-                "name": "test_bool_exp",
+                "name": "proposal_bool_exp",
                 "ofType": null
               },
               "defaultValue": null
@@ -891,14 +1447,14 @@
         },
         {
           "kind": "ENUM",
-          "name": "test_constraint",
-          "description": "unique or primary key constraints on table \"test\"",
+          "name": "proposal_constraint",
+          "description": "unique or primary key constraints on table \"proposal\"",
           "fields": null,
           "inputFields": null,
           "interfaces": null,
           "enumValues": [
             {
-              "name": "test_pkey",
+              "name": "proposal_pkey",
               "description": "unique or primary key constraint",
               "isDeprecated": false,
               "deprecationReason": null
@@ -908,14 +1464,32 @@
         },
         {
           "kind": "ENUM",
-          "name": "test_update_column",
-          "description": "update columns of table \"test\"",
+          "name": "proposal_update_column",
+          "description": "update columns of table \"proposal\"",
           "fields": null,
           "inputFields": null,
           "interfaces": null,
           "enumValues": [
             {
+              "name": "description",
+              "description": "column name",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "id",
+              "description": "column name",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "location",
+              "description": "column name",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "title",
               "description": "column name",
               "isDeprecated": false,
               "deprecationReason": null
@@ -925,16 +1499,46 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "test_set_input",
-          "description": "input type for updating data in table \"test\"",
+          "name": "proposal_set_input",
+          "description": "input type for updating data in table \"proposal\"",
           "fields": null,
           "inputFields": [
+            {
+              "name": "description",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
             {
               "name": "id",
               "description": null,
               "type": {
                 "kind": "SCALAR",
                 "name": "uuid",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "location",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "point",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "title",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
                 "ofType": null
               },
               "defaultValue": null
@@ -950,8 +1554,8 @@
           "description": "subscription root",
           "fields": [
             {
-              "name": "test",
-              "description": "fetch data from the table: \"test\"",
+              "name": "proposal",
+              "description": "fetch data from the table: \"proposal\"",
               "args": [
                 {
                   "name": "distinct_on",
@@ -964,7 +1568,7 @@
                       "name": null,
                       "ofType": {
                         "kind": "ENUM",
-                        "name": "test_select_column",
+                        "name": "proposal_select_column",
                         "ofType": null
                       }
                     }
@@ -1002,7 +1606,7 @@
                       "name": null,
                       "ofType": {
                         "kind": "INPUT_OBJECT",
-                        "name": "test_order_by",
+                        "name": "proposal_order_by",
                         "ofType": null
                       }
                     }
@@ -1014,7 +1618,7 @@
                   "description": "filter the rows returned",
                   "type": {
                     "kind": "INPUT_OBJECT",
-                    "name": "test_bool_exp",
+                    "name": "proposal_bool_exp",
                     "ofType": null
                   },
                   "defaultValue": null
@@ -1031,7 +1635,7 @@
                     "name": null,
                     "ofType": {
                       "kind": "OBJECT",
-                      "name": "test",
+                      "name": "proposal",
                       "ofType": null
                     }
                   }
@@ -1041,8 +1645,8 @@
               "deprecationReason": null
             },
             {
-              "name": "test_aggregate",
-              "description": "fetch aggregated fields from the table: \"test\"",
+              "name": "proposal_aggregate",
+              "description": "fetch aggregated fields from the table: \"proposal\"",
               "args": [
                 {
                   "name": "distinct_on",
@@ -1055,7 +1659,7 @@
                       "name": null,
                       "ofType": {
                         "kind": "ENUM",
-                        "name": "test_select_column",
+                        "name": "proposal_select_column",
                         "ofType": null
                       }
                     }
@@ -1093,7 +1697,7 @@
                       "name": null,
                       "ofType": {
                         "kind": "INPUT_OBJECT",
-                        "name": "test_order_by",
+                        "name": "proposal_order_by",
                         "ofType": null
                       }
                     }
@@ -1105,7 +1709,7 @@
                   "description": "filter the rows returned",
                   "type": {
                     "kind": "INPUT_OBJECT",
-                    "name": "test_bool_exp",
+                    "name": "proposal_bool_exp",
                     "ofType": null
                   },
                   "defaultValue": null
@@ -1116,7 +1720,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "OBJECT",
-                  "name": "test_aggregate",
+                  "name": "proposal_aggregate",
                   "ofType": null
                 }
               },
@@ -1124,8 +1728,8 @@
               "deprecationReason": null
             },
             {
-              "name": "test_by_pk",
-              "description": "fetch data from the table: \"test\" using primary key columns",
+              "name": "proposal_by_pk",
+              "description": "fetch data from the table: \"proposal\" using primary key columns",
               "args": [
                 {
                   "name": "id",
@@ -1144,7 +1748,7 @@
               ],
               "type": {
                 "kind": "OBJECT",
-                "name": "test",
+                "name": "proposal",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -1497,16 +2101,6 @@
               "deprecationReason": null
             }
           ],
-          "possibleTypes": null
-        },
-        {
-          "kind": "SCALAR",
-          "name": "String",
-          "description": "The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.",
-          "fields": null,
-          "inputFields": null,
-          "interfaces": null,
-          "enumValues": null,
           "possibleTypes": null
         },
         {
@@ -1984,12 +2578,63 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "test_aggregate_order_by",
-          "description": "order by aggregate values of table \"test\"",
+          "name": "proposal_aggregate_order_by",
+          "description": "order by aggregate values of table \"proposal\"",
           "fields": null,
           "inputFields": [
             {
               "name": "count",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "max",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "proposal_max_order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "min",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "proposal_min_order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "proposal_max_order_by",
+          "description": "order by max() on columns of table \"proposal\"",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "description",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "title",
               "description": null,
               "type": {
                 "kind": "ENUM",
@@ -2005,8 +2650,39 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "test_arr_rel_insert_input",
-          "description": "input type for inserting array relation for remote table \"test\"",
+          "name": "proposal_min_order_by",
+          "description": "order by min() on columns of table \"proposal\"",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "description",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "title",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "proposal_arr_rel_insert_input",
+          "description": "input type for inserting array relation for remote table \"proposal\"",
           "fields": null,
           "inputFields": [
             {
@@ -2023,7 +2699,7 @@
                     "name": null,
                     "ofType": {
                       "kind": "INPUT_OBJECT",
-                      "name": "test_insert_input",
+                      "name": "proposal_insert_input",
                       "ofType": null
                     }
                   }
@@ -2036,7 +2712,7 @@
               "description": null,
               "type": {
                 "kind": "INPUT_OBJECT",
-                "name": "test_on_conflict",
+                "name": "proposal_on_conflict",
                 "ofType": null
               },
               "defaultValue": null
@@ -2048,8 +2724,8 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "test_obj_rel_insert_input",
-          "description": "input type for inserting object relation for remote table \"test\"",
+          "name": "proposal_obj_rel_insert_input",
+          "description": "input type for inserting object relation for remote table \"proposal\"",
           "fields": null,
           "inputFields": [
             {
@@ -2060,7 +2736,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "test_insert_input",
+                  "name": "proposal_insert_input",
                   "ofType": null
                 }
               },
@@ -2071,7 +2747,7 @@
               "description": null,
               "type": {
                 "kind": "INPUT_OBJECT",
-                "name": "test_on_conflict",
+                "name": "proposal_on_conflict",
                 "ofType": null
               },
               "defaultValue": null
@@ -2139,7 +2815,7 @@
   "extensions": {
     "graphql-config": {
       "source": "http://postcovidurbanism.eastus.azurecontainer.io/v1/graphql",
-      "timestamp": "Sat Apr 18 2020 15:41:03 GMT+0200 (Central European Summer Time)"
+      "timestamp": "Sat Apr 18 2020 15:55:06 GMT+0200 (Central European Summer Time)"
     }
   }
 }

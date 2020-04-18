@@ -2,9 +2,9 @@
 .merlin
 .bsb.lock
 __stories__/**/*.bs.js
-src/**/*.bs.js
+src/**/*.js
 npm-debug.log
-dist/
+build/
 /lib/bs/
 /node_modules/
 /bundleOutput/
