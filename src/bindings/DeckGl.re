@@ -15,7 +15,7 @@ module Layers = {
     external create: obj => t = "LineLayer";
   };
 };
-type initialState = {
+type viewport = {
   longitude: float,
   latitude: float,
   zoom: int,
@@ -26,7 +26,7 @@ type initialState = {
 [@bs.module "@deck.gl/react"] [@react.component]
 external make:
   (
-    ~initialViewState: initialState,
+    ~initialViewState: viewport,
     ~controller: bool,
     ~reuseMaps: bool,
     ~layers: array(Layers.t),
@@ -38,11 +38,7 @@ external make:
 module StaticMap = {
   [@bs.module "react-map-gl"] [@react.component]
   external make:
-    (
-      ~mapboxApiAccessToken: string,
-      ~mapStyle: string,
-      ~viewState: initialState
-    ) =>
+    (~mapboxApiAccessToken: string, ~mapStyle: string, ~viewState: viewport) =>
     React.element =
     "default";
 };
