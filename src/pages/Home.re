@@ -22,7 +22,7 @@ let make = () => {
     <DeckGl.StaticMap
       viewState=initialViewState
       mapStyle="mapbox://styles/mapbox/light-v9"
-      mapboxApiAccessToken="pk.eyJ1IjoicGllcnJpY2tibCIsImEiOiJjazRhMjBkcXQwMmhsM2VwMXkyM3JyZW54In0.qv1Lq36PUGxriIIbLUtovw"
+      mapboxApiAccessToken=Env.mapbox_token_api
     />
   </DeckGl>;
 };
