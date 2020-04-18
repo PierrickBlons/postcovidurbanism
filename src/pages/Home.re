@@ -1,4 +1,4 @@
-let initialViewState: DeckGl.initialState = {
+let initialViewState: DeckGl.viewport = {
   longitude: (-122.41669),
   latitude: 37.7853,
   zoom: 13,
