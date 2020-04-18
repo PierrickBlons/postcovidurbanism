@@ -13,6 +13,7 @@ steps:
 - task: NodeTool@0
   inputs:
     versionSpec: '10.x'
+    checkLatest: true
   displayName: 'Install Node.js'
 
 - script: |
@@ -20,3 +21,8 @@ steps:
     npm install
     npm run build
   displayName: 'npm install and build'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: react'
+  inputs:
+    PathtoPublish: 'web/build'
