@@ -10,7 +10,7 @@ let getRoutePath = route =>
 
 let getRouteFromUrl = url =>
   switch (url) {
-  | [route] when route === Env.app_path => Home
+  | [] => Home
   | _ => NotFound
   };
 
