@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/postcovidurbanism/static/js/main.d5cebee0.chunk.js",
-    "main.js.map": "/postcovidurbanism/static/js/main.d5cebee0.chunk.js.map",
-    "runtime-main.js": "/postcovidurbanism/static/js/runtime-main.56aa04e3.js",
-    "runtime-main.js.map": "/postcovidurbanism/static/js/runtime-main.56aa04e3.js.map",
-    "static/js/2.ee8e2cde.chunk.js": "/postcovidurbanism/static/js/2.ee8e2cde.chunk.js",
-    "static/js/2.ee8e2cde.chunk.js.map": "/postcovidurbanism/static/js/2.ee8e2cde.chunk.js.map",
-    "index.html": "/postcovidurbanism/index.html",
-    "precache-manifest.e77379467c7cd3a59a971942b48fd229.js": "/postcovidurbanism/precache-manifest.e77379467c7cd3a59a971942b48fd229.js",
-    "service-worker.js": "/postcovidurbanism/service-worker.js",
-    "static/js/2.ee8e2cde.chunk.js.LICENSE.txt": "/postcovidurbanism/static/js/2.ee8e2cde.chunk.js.LICENSE.txt"
+    "main.js": "/static/js/main.dfffe063.chunk.js",
+    "main.js.map": "/static/js/main.dfffe063.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.95a77404.js",
+    "runtime-main.js.map": "/static/js/runtime-main.95a77404.js.map",
+    "static/js/2.c4eb26ca.chunk.js": "/static/js/2.c4eb26ca.chunk.js",
+    "static/js/2.c4eb26ca.chunk.js.map": "/static/js/2.c4eb26ca.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.9ab008f3bd95f0676adcaeb98a38c9fe.js": "/precache-manifest.9ab008f3bd95f0676adcaeb98a38c9fe.js",
+    "service-worker.js": "/service-worker.js",
+    "static/js/2.c4eb26ca.chunk.js.LICENSE.txt": "/static/js/2.c4eb26ca.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.56aa04e3.js",
-    "static/js/2.ee8e2cde.chunk.js",
-    "static/js/main.d5cebee0.chunk.js"
+    "static/js/runtime-main.95a77404.js",
+    "static/js/2.c4eb26ca.chunk.js",
+    "static/js/main.dfffe063.chunk.js"
   ]
 }
