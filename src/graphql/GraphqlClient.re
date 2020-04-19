@@ -9,7 +9,7 @@ Js.Dict.set(
 
 let httpLink =
   ApolloLinks.createHttpLink(
-    ~uri="https://postcovidurbanism.eastus.azurecontainer.io/v1/graphql",
+    ~uri="http://postcovidurbanism.eastus.azurecontainer.io/v1/graphql",
     ~headers=Js.Json.object_(authHeaders),
     (),
   );

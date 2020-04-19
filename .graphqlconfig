@@ -9,7 +9,10 @@
   "extensions": {
     "endpoints": {
       "staging": {
-        "url": "http://postcovidurbanism.eastus.azurecontainer.io/v1/graphql"
+        "url": "http://postcovidurbanism.eastus.azurecontainer.io/v1/graphql",
+        "headers": {
+          "x-hasura-access-key": "{xJA;O5k:(FGD'H-"
+        }
       }
     }
   }

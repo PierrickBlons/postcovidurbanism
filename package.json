@@ -1,7 +1,6 @@
 {
   "name": "front",
   "version": "0.1.0",
-  "homepage": "postcovidurbanism",
   "scripts": {
     "postinstall": "yarn get-schema",
     "start": "react-scripts start",

@@ -7,20 +7,19 @@ let initialViewState: DeckGl.viewport = {
 };
 
 let layerLineId = "layer-id";
-let lineColor: (int, int, int) = (255, 0, 0);
-let lineWidth: int = 3;
+let lineColor: (int, int, int, int) = (36, 142, 128, 255);
+let lineWidth: int = 7;
 
 type state = {
   label: string,
-  posX: int,
-  posY: int,
   visible: bool,
+  description: string,
 };
 
 type action =
   | Click(DeckGl.Layers.Line.info);
 
-let initialState = {label: "default", posX: 0, posY: 0, visible: false};
+let initialState = {label: "Titre de la Proposition", description: "Description de la proposition", visible: true};
 
 let visibleToDisplay = visible => visible ? "block" : "none";
 
@@ -32,7 +31,7 @@ let make = () => {
     React.useReducer(
       (_, action) =>
         switch (action) {
-        | Click(info) => {label: info.detail.label, posX: info.x, posY: info.y, visible: true}
+        | Click(info) => {label: info.detail.label, description: info.detail.description, visible: true}
         },
       initialState,
     );
@@ -41,12 +40,20 @@ let make = () => {
     <div
       style={ReactDOMRe.Style.make(
         ~display=state.visible->visibleToDisplay,
+        ~backgroundColor="#aaa",
         ~position="absolute",
-        ~top=state.posY->string_of_int ++ "px",
-        ~left=state.posX->string_of_int ++ "px",
+        ~top="20px",
+        ~left="20px",
+        ~width="300px",
+        ~height="150px",
+        ~borderRadius="10px",
+        ~padding="5px",
+        ~color="#fff",
+        ~fontFamily="Source Sans Pro, sans-serif",
         (),
       )}>
-      {React.string(state.label)}
+      <h3 style={ReactDOMRe.Style.make(~margin="0",())}>{React.string(state.label)}</h3>
+      <p>{React.string(state.description)}</p>
     </div>;
   };
 
@@ -55,20 +62,25 @@ let make = () => {
     | Data(data) =>
       data##proposal
       ->Belt.Array.map(proposal => {
-          switch (proposal##latitude, proposal##longitude) {
-          | (Some(latitude), Some(longitude)) =>
-            Js.log2(latitude, longitude);
+          switch (proposal##startLatitude, proposal##startLongitude, proposal##endLatitude, proposal##endLongitude) {
+          | (Some(startLatitude), Some(startLongitude), Some(endLatitude), Some(endLongitude)) =>
             {
               DeckGl.Layers.Line.label: proposal##title,
+              DeckGl.Layers.Line.description: proposal##description->Belt.Option.getWithDefault(""),
               DeckGl.Layers.Line.sourcePosition: (
-                Js.Json.decodeNumber(longitude)
+                Js.Json.decodeNumber(startLongitude)
                 ->Belt.Option.getWithDefault(0.),
-                Js.Json.decodeNumber(latitude)
+                Js.Json.decodeNumber(startLatitude)
                 ->Belt.Option.getWithDefault(0.),
               ),
-              DeckGl.Layers.Line.targetPosition: (0., 0.),
+              DeckGl.Layers.Line.targetPosition: (
+                Js.Json.decodeNumber(endLongitude)
+                ->Belt.Option.getWithDefault(0.),
+                Js.Json.decodeNumber(endLatitude)
+                ->Belt.Option.getWithDefault(0.),
+              ),
             };
-          | _ => {label: "", sourcePosition: (0., 0.), targetPosition: (0., 0.)}
+          | _ => {label: "", description: "", sourcePosition: (0., 0.), targetPosition: (0., 0.)}
           }
         })
     | _ => [||]

@@ -5,8 +5,11 @@ module GetProposalsListQuery = [%graphql {|
     query GetProposalsList { 
             proposal {
                 title
-                latitude
-                longitude
+                startLatitude
+                startLongitude
+                endLatitude
+                endLongitude
+                description
             }
         }
     |}

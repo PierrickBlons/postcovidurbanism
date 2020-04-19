@@ -5,6 +5,7 @@ module Layers = {
     type position = (float, float);
     type data = {
       label: string,
+      description: string,
       sourcePosition: position,
       targetPosition: position,
     };
@@ -16,7 +17,7 @@ module Layers = {
     type obj = {
       id: string,
       data: array(data),
-      getColor: (int, int, int),
+      getColor: (int, int, int, int),
       getWidth: int,
       onClick: info => unit,
       pickable: bool
