@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/postcovidurbanism/precache-manifest.88ffb6f0a56c5791a8f013bcfbd13be7.js"
+  "/postcovidurbanism/precache-manifest.b25d0626063dbc6bf8377d89223995e0.js"
 );
 
 self.addEventListener('message', (event) => {

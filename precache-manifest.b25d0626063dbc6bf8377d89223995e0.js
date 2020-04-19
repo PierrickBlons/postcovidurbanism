@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "17f9d0ddfa8076f62e2dc0856c13c442",
+    "revision": "e439adcf550ed0cb89a31f17f1f5b4f6",
     "url": "/postcovidurbanism/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/postcovidurbanism/static/js/2.ee8e2cde.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "6c002849f788799779b1",
-    "url": "/postcovidurbanism/static/js/main.6a11aaab.chunk.js"
+    "revision": "fd2cc91f95d6f3d0bcaa",
+    "url": "/postcovidurbanism/static/js/main.332c473d.chunk.js"
   },
   {
     "revision": "664ce091ffb83e473988",

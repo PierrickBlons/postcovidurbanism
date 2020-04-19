@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/postcovidurbanism/static/js/main.6a11aaab.chunk.js",
-    "main.js.map": "/postcovidurbanism/static/js/main.6a11aaab.chunk.js.map",
+    "main.js": "/postcovidurbanism/static/js/main.332c473d.chunk.js",
+    "main.js.map": "/postcovidurbanism/static/js/main.332c473d.chunk.js.map",
     "runtime-main.js": "/postcovidurbanism/static/js/runtime-main.56aa04e3.js",
     "runtime-main.js.map": "/postcovidurbanism/static/js/runtime-main.56aa04e3.js.map",
     "static/js/2.ee8e2cde.chunk.js": "/postcovidurbanism/static/js/2.ee8e2cde.chunk.js",
     "static/js/2.ee8e2cde.chunk.js.map": "/postcovidurbanism/static/js/2.ee8e2cde.chunk.js.map",
     "index.html": "/postcovidurbanism/index.html",
-    "precache-manifest.88ffb6f0a56c5791a8f013bcfbd13be7.js": "/postcovidurbanism/precache-manifest.88ffb6f0a56c5791a8f013bcfbd13be7.js",
+    "precache-manifest.b25d0626063dbc6bf8377d89223995e0.js": "/postcovidurbanism/precache-manifest.b25d0626063dbc6bf8377d89223995e0.js",
     "service-worker.js": "/postcovidurbanism/service-worker.js",
     "static/js/2.ee8e2cde.chunk.js.LICENSE.txt": "/postcovidurbanism/static/js/2.ee8e2cde.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.56aa04e3.js",
     "static/js/2.ee8e2cde.chunk.js",
-    "static/js/main.6a11aaab.chunk.js"
+    "static/js/main.332c473d.chunk.js"
   ]
 }
