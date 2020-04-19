@@ -8,6 +8,7 @@ module Layers = {
       description: string,
       sourcePosition: position,
       targetPosition: position,
+      kind: string
     };
     type info = {
       [@bs.as "object"]detail: data,
@@ -17,7 +18,7 @@ module Layers = {
     type obj = {
       id: string,
       data: array(data),
-      getColor: (int, int, int, int),
+      getColor: data => (int, int, int, int),
       getWidth: int,
       onClick: info => unit,
       pickable: bool
