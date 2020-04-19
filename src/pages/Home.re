@@ -32,7 +32,7 @@ let make = () => {
     React.useReducer(
       (_, action) =>
         switch (action) {
-        | Click(info) => {label: info._object.label, posX: info.x, posY: info.y, visible: true}
+        | Click(info) => {label: info.detail.label, posX: info.x, posY: info.y, visible: true}
         },
       initialState,
     );

@@ -9,7 +9,7 @@ module Layers = {
       targetPosition: position,
     };
     type info = {
-      [@bs.as "object"]_object: data,
+      [@bs.as "object"]detail: data,
       x: int,
       y: int
     }
