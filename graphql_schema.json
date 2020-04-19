@@ -244,7 +244,19 @@
               "deprecationReason": null
             },
             {
+              "name": "latitude",
+              "description": "column name",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "location",
+              "description": "column name",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "longitude",
               "description": "column name",
               "isDeprecated": false,
               "deprecationReason": null
@@ -295,7 +307,27 @@
               "defaultValue": null
             },
             {
+              "name": "latitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
               "name": "location",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "longitude",
               "description": null,
               "type": {
                 "kind": "ENUM",
@@ -431,11 +463,31 @@
               "defaultValue": null
             },
             {
+              "name": "latitude",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "numeric_comparison_exp",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
               "name": "location",
               "description": null,
               "type": {
                 "kind": "INPUT_OBJECT",
                 "name": "point_comparison_exp",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "longitude",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "numeric_comparison_exp",
                 "ofType": null
               },
               "defaultValue": null
@@ -781,6 +833,133 @@
         },
         {
           "kind": "INPUT_OBJECT",
+          "name": "numeric_comparison_exp",
+          "description": "expression to compare columns of type numeric. All fields are combined with logical 'AND'.",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "_eq",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "numeric",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_gt",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "numeric",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_gte",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "numeric",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_in",
+              "description": null,
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "SCALAR",
+                    "name": "numeric",
+                    "ofType": null
+                  }
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_is_null",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_lt",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "numeric",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_lte",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "numeric",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_neq",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "numeric",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_nin",
+              "description": null,
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "SCALAR",
+                    "name": "numeric",
+                    "ofType": null
+                  }
+                }
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "SCALAR",
+          "name": "numeric",
+          "description": null,
+          "fields": null,
+          "inputFields": null,
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
           "name": "point_comparison_exp",
           "description": "expression to compare columns of type point. All fields are combined with logical 'AND'.",
           "fields": null,
@@ -940,12 +1119,36 @@
               "deprecationReason": null
             },
             {
+              "name": "latitude",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "numeric",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "location",
               "description": null,
               "args": [],
               "type": {
                 "kind": "SCALAR",
                 "name": "point",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "longitude",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "numeric",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -1026,6 +1229,18 @@
           "description": "aggregate fields of \"proposal\"",
           "fields": [
             {
+              "name": "avg",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "proposal_avg_fields",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "count",
               "description": null,
               "args": [
@@ -1089,10 +1304,139 @@
               },
               "isDeprecated": false,
               "deprecationReason": null
+            },
+            {
+              "name": "stddev",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "proposal_stddev_fields",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "stddev_pop",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "proposal_stddev_pop_fields",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "stddev_samp",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "proposal_stddev_samp_fields",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "sum",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "proposal_sum_fields",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "var_pop",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "proposal_var_pop_fields",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "var_samp",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "proposal_var_samp_fields",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "variance",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "proposal_variance_fields",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
             }
           ],
           "inputFields": null,
           "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "proposal_avg_fields",
+          "description": "aggregate avg on columns",
+          "fields": [
+            {
+              "name": "latitude",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Float",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "longitude",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Float",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "SCALAR",
+          "name": "Float",
+          "description": "The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](https://en.wikipedia.org/wiki/IEEE_floating_point).",
+          "fields": null,
+          "inputFields": null,
+          "interfaces": null,
           "enumValues": null,
           "possibleTypes": null
         },
@@ -1108,6 +1452,30 @@
               "type": {
                 "kind": "SCALAR",
                 "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "latitude",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "numeric",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "longitude",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "numeric",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -1149,12 +1517,281 @@
               "deprecationReason": null
             },
             {
+              "name": "latitude",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "numeric",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "longitude",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "numeric",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "title",
               "description": null,
               "args": [],
               "type": {
                 "kind": "SCALAR",
                 "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "proposal_stddev_fields",
+          "description": "aggregate stddev on columns",
+          "fields": [
+            {
+              "name": "latitude",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Float",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "longitude",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Float",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "proposal_stddev_pop_fields",
+          "description": "aggregate stddev_pop on columns",
+          "fields": [
+            {
+              "name": "latitude",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Float",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "longitude",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Float",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "proposal_stddev_samp_fields",
+          "description": "aggregate stddev_samp on columns",
+          "fields": [
+            {
+              "name": "latitude",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Float",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "longitude",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Float",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "proposal_sum_fields",
+          "description": "aggregate sum on columns",
+          "fields": [
+            {
+              "name": "latitude",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "numeric",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "longitude",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "numeric",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "proposal_var_pop_fields",
+          "description": "aggregate var_pop on columns",
+          "fields": [
+            {
+              "name": "latitude",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Float",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "longitude",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Float",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "proposal_var_samp_fields",
+          "description": "aggregate var_samp on columns",
+          "fields": [
+            {
+              "name": "latitude",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Float",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "longitude",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Float",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "proposal_variance_fields",
+          "description": "aggregate variance on columns",
+          "fields": [
+            {
+              "name": "latitude",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Float",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "longitude",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Float",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -1364,11 +2001,31 @@
               "defaultValue": null
             },
             {
+              "name": "latitude",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "numeric",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
               "name": "location",
               "description": null,
               "type": {
                 "kind": "SCALAR",
                 "name": "point",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "longitude",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "numeric",
                 "ofType": null
               },
               "defaultValue": null
@@ -1483,7 +2140,19 @@
               "deprecationReason": null
             },
             {
+              "name": "latitude",
+              "description": "column name",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "location",
+              "description": "column name",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "longitude",
               "description": "column name",
               "isDeprecated": false,
               "deprecationReason": null
@@ -1524,11 +2193,31 @@
               "defaultValue": null
             },
             {
+              "name": "latitude",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "numeric",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
               "name": "location",
               "description": null,
               "type": {
                 "kind": "SCALAR",
                 "name": "point",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "longitude",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "numeric",
                 "ofType": null
               },
               "defaultValue": null
@@ -2558,16 +3247,6 @@
         },
         {
           "kind": "SCALAR",
-          "name": "Float",
-          "description": "The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](https://en.wikipedia.org/wiki/IEEE_floating_point).",
-          "fields": null,
-          "inputFields": null,
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "SCALAR",
           "name": "ID",
           "description": "The `ID` scalar type represents a unique identifier, often used to refetch an object or as key for a cache. The ID type appears in a JSON response as a String; however, it is not intended to be human-readable. When expected as an input type, any string (such as `\"4\"`) or integer (such as `4`) input value will be accepted as an ID.",
           "fields": null,
@@ -2582,6 +3261,16 @@
           "description": "order by aggregate values of table \"proposal\"",
           "fields": null,
           "inputFields": [
+            {
+              "name": "avg",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "proposal_avg_order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
             {
               "name": "count",
               "description": null,
@@ -2611,6 +3300,107 @@
                 "ofType": null
               },
               "defaultValue": null
+            },
+            {
+              "name": "stddev",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "proposal_stddev_order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "stddev_pop",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "proposal_stddev_pop_order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "stddev_samp",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "proposal_stddev_samp_order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "sum",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "proposal_sum_order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "var_pop",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "proposal_var_pop_order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "var_samp",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "proposal_var_samp_order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "variance",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "proposal_variance_order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "proposal_avg_order_by",
+          "description": "order by avg() on columns of table \"proposal\"",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "latitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "longitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
             }
           ],
           "interfaces": null,
@@ -2625,6 +3415,26 @@
           "inputFields": [
             {
               "name": "description",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "latitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "longitude",
               "description": null,
               "type": {
                 "kind": "ENUM",
@@ -2665,7 +3475,244 @@
               "defaultValue": null
             },
             {
+              "name": "latitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "longitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
               "name": "title",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "proposal_stddev_order_by",
+          "description": "order by stddev() on columns of table \"proposal\"",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "latitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "longitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "proposal_stddev_pop_order_by",
+          "description": "order by stddev_pop() on columns of table \"proposal\"",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "latitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "longitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "proposal_stddev_samp_order_by",
+          "description": "order by stddev_samp() on columns of table \"proposal\"",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "latitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "longitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "proposal_sum_order_by",
+          "description": "order by sum() on columns of table \"proposal\"",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "latitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "longitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "proposal_var_pop_order_by",
+          "description": "order by var_pop() on columns of table \"proposal\"",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "latitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "longitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "proposal_var_samp_order_by",
+          "description": "order by var_samp() on columns of table \"proposal\"",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "latitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "longitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "proposal_variance_order_by",
+          "description": "order by variance() on columns of table \"proposal\"",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "latitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "longitude",
               "description": null,
               "type": {
                 "kind": "ENUM",
@@ -2815,7 +3862,7 @@
   "extensions": {
     "graphql-config": {
       "source": "http://postcovidurbanism.eastus.azurecontainer.io/v1/graphql",
-      "timestamp": "Sat Apr 18 2020 15:55:06 GMT+0200 (Central European Summer Time)"
+      "timestamp": "Sun Apr 19 2020 02:25:17 GMT+0200 (Central European Summer Time)"
     }
   }
 }
