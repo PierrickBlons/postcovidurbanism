@@ -86,8 +86,6 @@ let make = () => {
     | _ => [||]
     };
 
-  Js.log(data);
-
   let layers = [|
     DeckGl.Layers.Line.create({
       id: layerLineId,
