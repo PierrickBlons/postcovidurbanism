@@ -4,11 +4,12 @@ module Layers = {
   module Line = {
     type position = (float, float);
     type data = {
+      label: string,
       sourcePosition: position,
       targetPosition: position,
     };
     type info = {
-      object_: string,
+      [@bs.as "object"]_object: data,
       x: int,
       y: int
     }
@@ -50,5 +51,5 @@ module StaticMap = {
   external make:
     (~mapboxApiAccessToken: string, ~mapStyle: string, ~viewState: viewport) =>
     React.element =
-    "default";
+    "StaticMap";
 };
