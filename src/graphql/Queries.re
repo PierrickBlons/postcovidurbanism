@@ -10,6 +10,7 @@ module GetProposalsListQuery = [%graphql {|
                 endLatitude
                 endLongitude
                 description
+                kind
             }
         }
     |}
