@@ -3,7 +3,6 @@ type route =
   | NotFound;
 
 let getRoutePath = route => {
-  Js.log(route);
   switch (route) {
   | Home => "/"
   | NotFound => "/404"
@@ -11,7 +10,6 @@ let getRoutePath = route => {
 }
 
 let getRouteFromUrl = url => {
-  Js.log(url);
   switch (url) {
   | [] => Home
   | _ => NotFound

@@ -19,7 +19,7 @@ type state = {
 type action =
   | Click(DeckGl.Layers.Line.info);
 
-let initialState = {label: "Titre de la Proposition", description: "Description de la proposition", visible: true};
+let initialState = {label: "Urbanisme tactique post covid", description: {j|Sélectionner un élément de la cartographie pour faire apparaitre le détail de la proposition|j}, visible: true};
 
 let visibleToDisplay = visible => visible ? "block" : "none";
 
