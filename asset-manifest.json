@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/postcovidurbanism/static/js/main.a6339e1b.chunk.js",
-    "main.js.map": "/postcovidurbanism/static/js/main.a6339e1b.chunk.js.map",
+    "main.js": "/postcovidurbanism/static/js/main.6a11aaab.chunk.js",
+    "main.js.map": "/postcovidurbanism/static/js/main.6a11aaab.chunk.js.map",
     "runtime-main.js": "/postcovidurbanism/static/js/runtime-main.56aa04e3.js",
     "runtime-main.js.map": "/postcovidurbanism/static/js/runtime-main.56aa04e3.js.map",
-    "static/js/2.468a47e4.chunk.js": "/postcovidurbanism/static/js/2.468a47e4.chunk.js",
-    "static/js/2.468a47e4.chunk.js.map": "/postcovidurbanism/static/js/2.468a47e4.chunk.js.map",
+    "static/js/2.ee8e2cde.chunk.js": "/postcovidurbanism/static/js/2.ee8e2cde.chunk.js",
+    "static/js/2.ee8e2cde.chunk.js.map": "/postcovidurbanism/static/js/2.ee8e2cde.chunk.js.map",
     "index.html": "/postcovidurbanism/index.html",
-    "precache-manifest.b52e5c38d1e0940a26dc08b9801e726c.js": "/postcovidurbanism/precache-manifest.b52e5c38d1e0940a26dc08b9801e726c.js",
+    "precache-manifest.88ffb6f0a56c5791a8f013bcfbd13be7.js": "/postcovidurbanism/precache-manifest.88ffb6f0a56c5791a8f013bcfbd13be7.js",
     "service-worker.js": "/postcovidurbanism/service-worker.js",
-    "static/js/2.468a47e4.chunk.js.LICENSE.txt": "/postcovidurbanism/static/js/2.468a47e4.chunk.js.LICENSE.txt"
+    "static/js/2.ee8e2cde.chunk.js.LICENSE.txt": "/postcovidurbanism/static/js/2.ee8e2cde.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.56aa04e3.js",
-    "static/js/2.468a47e4.chunk.js",
-    "static/js/main.a6339e1b.chunk.js"
+    "static/js/2.ee8e2cde.chunk.js",
+    "static/js/main.6a11aaab.chunk.js"
   ]
 }
