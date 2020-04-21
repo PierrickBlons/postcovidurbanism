@@ -1,7 +1,7 @@
 let initialViewState: DeckGl.viewport = {
   longitude: 1.091269,
   latitude: 49.443268,
-  zoom: 13,
+  zoom: 10,
   pitch: 0,
   bearing: 0,
 };
@@ -20,7 +20,6 @@ let getColor = (kind) =>
       | _ => (0, 0, 0, 0)
     };
 
-
 type state = {
   label: string,
   visible: bool,
@@ -35,8 +34,6 @@ let initialState = {
   description: {j|Sélectionner un élément de la cartographie pour faire apparaitre le détail de la proposition|j},
   visible: true,
 };
-
-let visibleToDisplay = visible => visible ? "block" : "none";
 
 [@react.component]
 let make = () => {
@@ -54,29 +51,6 @@ let make = () => {
         },
       initialState,
     );
-
-  let renderTooltip = () => {
-    <div
-      style={ReactDOMRe.Style.make(
-        ~display=state.visible->visibleToDisplay,
-        ~backgroundColor="#aaa",
-        ~position="absolute",
-        ~top="20px",
-        ~left="20px",
-        ~width="300px",
-        ~height="150px",
-        ~borderRadius="10px",
-        ~padding="5px",
-        ~color="#fff",
-        ~fontFamily="Source Sans Pro, sans-serif",
-        (),
-      )}>
-      <h3 style={ReactDOMRe.Style.make(~margin="0", ())}>
-        {React.string(state.label)}
-      </h3>
-      <p> {React.string(state.description)} </p>
-    </div>;
-  };
 
   let data =
     switch (proposals) {
@@ -141,6 +115,6 @@ let make = () => {
       mapStyle="mapbox://styles/mapbox/dark-v10"
       mapboxApiAccessToken=Env.mapbox_token_api
     />
-    {renderTooltip()}
+    <Tooltip isVisible=state.visible label=state.label description=state.description />
   </DeckGl>;
 };

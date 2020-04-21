@@ -17,6 +17,207 @@
           "description": "query root",
           "fields": [
             {
+              "name": "author",
+              "description": "fetch data from the table: \"author\"",
+              "args": [
+                {
+                  "name": "distinct_on",
+                  "description": "distinct select on columns",
+                  "type": {
+                    "kind": "LIST",
+                    "name": null,
+                    "ofType": {
+                      "kind": "NON_NULL",
+                      "name": null,
+                      "ofType": {
+                        "kind": "ENUM",
+                        "name": "author_select_column",
+                        "ofType": null
+                      }
+                    }
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "limit",
+                  "description": "limit the number of rows returned",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "offset",
+                  "description": "skip the first n rows. Use only with order_by",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "order_by",
+                  "description": "sort the rows by one or more columns",
+                  "type": {
+                    "kind": "LIST",
+                    "name": null,
+                    "ofType": {
+                      "kind": "NON_NULL",
+                      "name": null,
+                      "ofType": {
+                        "kind": "INPUT_OBJECT",
+                        "name": "author_order_by",
+                        "ofType": null
+                      }
+                    }
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "where",
+                  "description": "filter the rows returned",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "author_bool_exp",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "OBJECT",
+                      "name": "author",
+                      "ofType": null
+                    }
+                  }
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "author_aggregate",
+              "description": "fetch aggregated fields from the table: \"author\"",
+              "args": [
+                {
+                  "name": "distinct_on",
+                  "description": "distinct select on columns",
+                  "type": {
+                    "kind": "LIST",
+                    "name": null,
+                    "ofType": {
+                      "kind": "NON_NULL",
+                      "name": null,
+                      "ofType": {
+                        "kind": "ENUM",
+                        "name": "author_select_column",
+                        "ofType": null
+                      }
+                    }
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "limit",
+                  "description": "limit the number of rows returned",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "offset",
+                  "description": "skip the first n rows. Use only with order_by",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "order_by",
+                  "description": "sort the rows by one or more columns",
+                  "type": {
+                    "kind": "LIST",
+                    "name": null,
+                    "ofType": {
+                      "kind": "NON_NULL",
+                      "name": null,
+                      "ofType": {
+                        "kind": "INPUT_OBJECT",
+                        "name": "author_order_by",
+                        "ofType": null
+                      }
+                    }
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "where",
+                  "description": "filter the rows returned",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "author_bool_exp",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "author_aggregate",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "author_by_pk",
+              "description": "fetch data from the table: \"author\" using primary key columns",
+              "args": [
+                {
+                  "name": "id",
+                  "description": null,
+                  "type": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "uuid",
+                      "ofType": null
+                    }
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "author",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "proposal",
               "description": "fetch data from the table: \"proposal\"",
               "args": [
@@ -225,30 +426,12 @@
         },
         {
           "kind": "ENUM",
-          "name": "proposal_select_column",
-          "description": "select columns of table \"proposal\"",
+          "name": "author_select_column",
+          "description": "select columns of table \"author\"",
           "fields": null,
           "inputFields": null,
           "interfaces": null,
           "enumValues": [
-            {
-              "name": "description",
-              "description": "column name",
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "endLatitude",
-              "description": "column name",
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "endLongitude",
-              "description": "column name",
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
             {
               "name": "id",
               "description": "column name",
@@ -256,31 +439,13 @@
               "deprecationReason": null
             },
             {
-              "name": "kind",
+              "name": "link",
               "description": "column name",
               "isDeprecated": false,
               "deprecationReason": null
             },
             {
-              "name": "location",
-              "description": "column name",
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "startLatitude",
-              "description": "column name",
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "startLongitude",
-              "description": "column name",
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "title",
+              "name": "name",
               "description": "column name",
               "isDeprecated": false,
               "deprecationReason": null
@@ -300,40 +465,10 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "proposal_order_by",
-          "description": "ordering options when selecting data from \"proposal\"",
+          "name": "author_order_by",
+          "description": "ordering options when selecting data from \"author\"",
           "fields": null,
           "inputFields": [
-            {
-              "name": "description",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "endLatitude",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "endLongitude",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
             {
               "name": "id",
               "description": null,
@@ -345,7 +480,7 @@
               "defaultValue": null
             },
             {
-              "name": "kind",
+              "name": "link",
               "description": null,
               "type": {
                 "kind": "ENUM",
@@ -355,7 +490,7 @@
               "defaultValue": null
             },
             {
-              "name": "location",
+              "name": "name",
               "description": null,
               "type": {
                 "kind": "ENUM",
@@ -365,31 +500,11 @@
               "defaultValue": null
             },
             {
-              "name": "startLatitude",
+              "name": "proposals_aggregate",
               "description": null,
               "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "startLongitude",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "title",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
+                "kind": "INPUT_OBJECT",
+                "name": "proposal_aggregate_order_by",
                 "ofType": null
               },
               "defaultValue": null
@@ -448,8 +563,719 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "proposal_bool_exp",
-          "description": "Boolean expression to filter rows from the table \"proposal\". All fields are combined with a logical 'AND'.",
+          "name": "proposal_aggregate_order_by",
+          "description": "order by aggregate values of table \"proposal\"",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "avg",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "proposal_avg_order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "count",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "max",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "proposal_max_order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "min",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "proposal_min_order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "stddev",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "proposal_stddev_order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "stddev_pop",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "proposal_stddev_pop_order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "stddev_samp",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "proposal_stddev_samp_order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "sum",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "proposal_sum_order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "var_pop",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "proposal_var_pop_order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "var_samp",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "proposal_var_samp_order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "variance",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "proposal_variance_order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "proposal_avg_order_by",
+          "description": "order by avg() on columns of table \"proposal\"",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "endLatitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "endLongitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "startLatitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "startLongitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "proposal_max_order_by",
+          "description": "order by max() on columns of table \"proposal\"",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "description",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "endLatitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "endLongitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "frequency",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "kind",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "startLatitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "startLongitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "title",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "proposal_min_order_by",
+          "description": "order by min() on columns of table \"proposal\"",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "description",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "endLatitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "endLongitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "frequency",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "kind",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "startLatitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "startLongitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "title",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "proposal_stddev_order_by",
+          "description": "order by stddev() on columns of table \"proposal\"",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "endLatitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "endLongitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "startLatitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "startLongitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "proposal_stddev_pop_order_by",
+          "description": "order by stddev_pop() on columns of table \"proposal\"",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "endLatitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "endLongitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "startLatitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "startLongitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "proposal_stddev_samp_order_by",
+          "description": "order by stddev_samp() on columns of table \"proposal\"",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "endLatitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "endLongitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "startLatitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "startLongitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "proposal_sum_order_by",
+          "description": "order by sum() on columns of table \"proposal\"",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "endLatitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "endLongitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "startLatitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "startLongitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "proposal_var_pop_order_by",
+          "description": "order by var_pop() on columns of table \"proposal\"",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "endLatitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "endLongitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "startLatitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "startLongitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "proposal_var_samp_order_by",
+          "description": "order by var_samp() on columns of table \"proposal\"",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "endLatitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "endLongitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "startLatitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "startLongitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "proposal_variance_order_by",
+          "description": "order by variance() on columns of table \"proposal\"",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "endLatitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "endLongitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "startLatitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "startLongitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "author_bool_exp",
+          "description": "Boolean expression to filter rows from the table \"author\". All fields are combined with a logical 'AND'.",
           "fields": null,
           "inputFields": [
             {
@@ -460,7 +1286,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "proposal_bool_exp",
+                  "name": "author_bool_exp",
                   "ofType": null
                 }
               },
@@ -471,7 +1297,7 @@
               "description": null,
               "type": {
                 "kind": "INPUT_OBJECT",
-                "name": "proposal_bool_exp",
+                "name": "author_bool_exp",
                 "ofType": null
               },
               "defaultValue": null
@@ -484,39 +1310,9 @@
                 "name": null,
                 "ofType": {
                   "kind": "INPUT_OBJECT",
-                  "name": "proposal_bool_exp",
+                  "name": "author_bool_exp",
                   "ofType": null
                 }
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "description",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "String_comparison_exp",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "endLatitude",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "numeric_comparison_exp",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "endLongitude",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "numeric_comparison_exp",
-                "ofType": null
               },
               "defaultValue": null
             },
@@ -531,7 +1327,7 @@
               "defaultValue": null
             },
             {
-              "name": "kind",
+              "name": "link",
               "description": null,
               "type": {
                 "kind": "INPUT_OBJECT",
@@ -541,46 +1337,163 @@
               "defaultValue": null
             },
             {
-              "name": "location",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "point_comparison_exp",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "startLatitude",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "numeric_comparison_exp",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "startLongitude",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "numeric_comparison_exp",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "title",
+              "name": "name",
               "description": null,
               "type": {
                 "kind": "INPUT_OBJECT",
                 "name": "String_comparison_exp",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "proposals",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "proposal_bool_exp",
                 "ofType": null
               },
               "defaultValue": null
             }
           ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "uuid_comparison_exp",
+          "description": "expression to compare columns of type uuid. All fields are combined with logical 'AND'.",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "_eq",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "uuid",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_gt",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "uuid",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_gte",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "uuid",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_in",
+              "description": null,
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "SCALAR",
+                    "name": "uuid",
+                    "ofType": null
+                  }
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_is_null",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_lt",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "uuid",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_lte",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "uuid",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_neq",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "uuid",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_nin",
+              "description": null,
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "SCALAR",
+                    "name": "uuid",
+                    "ofType": null
+                  }
+                }
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "SCALAR",
+          "name": "uuid",
+          "description": null,
+          "fields": null,
+          "inputFields": null,
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "SCALAR",
+          "name": "Boolean",
+          "description": "The `Boolean` scalar type represents `true` or `false`.",
+          "fields": null,
+          "inputFields": null,
           "interfaces": null,
           "enumValues": null,
           "possibleTypes": null
@@ -773,11 +1686,170 @@
           "possibleTypes": null
         },
         {
-          "kind": "SCALAR",
-          "name": "Boolean",
-          "description": "The `Boolean` scalar type represents `true` or `false`.",
+          "kind": "INPUT_OBJECT",
+          "name": "proposal_bool_exp",
+          "description": "Boolean expression to filter rows from the table \"proposal\". All fields are combined with a logical 'AND'.",
           "fields": null,
-          "inputFields": null,
+          "inputFields": [
+            {
+              "name": "_and",
+              "description": null,
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "proposal_bool_exp",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_not",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "proposal_bool_exp",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_or",
+              "description": null,
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "proposal_bool_exp",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "author",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "author_bool_exp",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "author_id",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "uuid_comparison_exp",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "description",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "String_comparison_exp",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "endLatitude",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "numeric_comparison_exp",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "endLongitude",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "numeric_comparison_exp",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "frequency",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "String_comparison_exp",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "id",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "uuid_comparison_exp",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "kind",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "String_comparison_exp",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "location",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "point_comparison_exp",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "startLatitude",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "numeric_comparison_exp",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "startLongitude",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "numeric_comparison_exp",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "title",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "String_comparison_exp",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
           "interfaces": null,
           "enumValues": null,
           "possibleTypes": null
@@ -902,133 +1974,6 @@
         {
           "kind": "SCALAR",
           "name": "numeric",
-          "description": null,
-          "fields": null,
-          "inputFields": null,
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "INPUT_OBJECT",
-          "name": "uuid_comparison_exp",
-          "description": "expression to compare columns of type uuid. All fields are combined with logical 'AND'.",
-          "fields": null,
-          "inputFields": [
-            {
-              "name": "_eq",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "uuid",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "_gt",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "uuid",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "_gte",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "uuid",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "_in",
-              "description": null,
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "uuid",
-                    "ofType": null
-                  }
-                }
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "_is_null",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "_lt",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "uuid",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "_lte",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "uuid",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "_neq",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "uuid",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "_nin",
-              "description": null,
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "uuid",
-                    "ofType": null
-                  }
-                }
-              },
-              "defaultValue": null
-            }
-          ],
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "SCALAR",
-          "name": "uuid",
           "description": null,
           "fields": null,
           "inputFields": null,
@@ -1165,9 +2110,470 @@
         },
         {
           "kind": "OBJECT",
+          "name": "author",
+          "description": "columns and relationships of \"author\"",
+          "fields": [
+            {
+              "name": "id",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "uuid",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "link",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "name",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "proposals",
+              "description": "An array relationship",
+              "args": [
+                {
+                  "name": "distinct_on",
+                  "description": "distinct select on columns",
+                  "type": {
+                    "kind": "LIST",
+                    "name": null,
+                    "ofType": {
+                      "kind": "NON_NULL",
+                      "name": null,
+                      "ofType": {
+                        "kind": "ENUM",
+                        "name": "proposal_select_column",
+                        "ofType": null
+                      }
+                    }
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "limit",
+                  "description": "limit the number of rows returned",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "offset",
+                  "description": "skip the first n rows. Use only with order_by",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "order_by",
+                  "description": "sort the rows by one or more columns",
+                  "type": {
+                    "kind": "LIST",
+                    "name": null,
+                    "ofType": {
+                      "kind": "NON_NULL",
+                      "name": null,
+                      "ofType": {
+                        "kind": "INPUT_OBJECT",
+                        "name": "proposal_order_by",
+                        "ofType": null
+                      }
+                    }
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "where",
+                  "description": "filter the rows returned",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "proposal_bool_exp",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "OBJECT",
+                      "name": "proposal",
+                      "ofType": null
+                    }
+                  }
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "proposals_aggregate",
+              "description": "An aggregated array relationship",
+              "args": [
+                {
+                  "name": "distinct_on",
+                  "description": "distinct select on columns",
+                  "type": {
+                    "kind": "LIST",
+                    "name": null,
+                    "ofType": {
+                      "kind": "NON_NULL",
+                      "name": null,
+                      "ofType": {
+                        "kind": "ENUM",
+                        "name": "proposal_select_column",
+                        "ofType": null
+                      }
+                    }
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "limit",
+                  "description": "limit the number of rows returned",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "offset",
+                  "description": "skip the first n rows. Use only with order_by",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "order_by",
+                  "description": "sort the rows by one or more columns",
+                  "type": {
+                    "kind": "LIST",
+                    "name": null,
+                    "ofType": {
+                      "kind": "NON_NULL",
+                      "name": null,
+                      "ofType": {
+                        "kind": "INPUT_OBJECT",
+                        "name": "proposal_order_by",
+                        "ofType": null
+                      }
+                    }
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "where",
+                  "description": "filter the rows returned",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "proposal_bool_exp",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "proposal_aggregate",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "proposal_select_column",
+          "description": "select columns of table \"proposal\"",
+          "fields": null,
+          "inputFields": null,
+          "interfaces": null,
+          "enumValues": [
+            {
+              "name": "author_id",
+              "description": "column name",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "description",
+              "description": "column name",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "endLatitude",
+              "description": "column name",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "endLongitude",
+              "description": "column name",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "frequency",
+              "description": "column name",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "id",
+              "description": "column name",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "kind",
+              "description": "column name",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "location",
+              "description": "column name",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "startLatitude",
+              "description": "column name",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "startLongitude",
+              "description": "column name",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "title",
+              "description": "column name",
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "proposal_order_by",
+          "description": "ordering options when selecting data from \"proposal\"",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "author",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "author_order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "author_id",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "description",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "endLatitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "endLongitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "frequency",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "id",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "kind",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "location",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "startLatitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "startLongitude",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "title",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
           "name": "proposal",
           "description": "columns and relationships of \"proposal\"",
           "fields": [
+            {
+              "name": "author",
+              "description": "An object relationship",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "author",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "author_id",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "uuid",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
             {
               "name": "description",
               "description": null,
@@ -1199,6 +2605,18 @@
               "type": {
                 "kind": "SCALAR",
                 "name": "numeric",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "frequency",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -1624,6 +3042,18 @@
               "deprecationReason": null
             },
             {
+              "name": "frequency",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "kind",
               "description": null,
               "args": [],
@@ -1713,6 +3143,18 @@
               "type": {
                 "kind": "SCALAR",
                 "name": "numeric",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "frequency",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -2187,9 +3629,229 @@
         },
         {
           "kind": "OBJECT",
+          "name": "author_aggregate",
+          "description": "aggregated selection of \"author\"",
+          "fields": [
+            {
+              "name": "aggregate",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "author_aggregate_fields",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "nodes",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "OBJECT",
+                      "name": "author",
+                      "ofType": null
+                    }
+                  }
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "author_aggregate_fields",
+          "description": "aggregate fields of \"author\"",
+          "fields": [
+            {
+              "name": "count",
+              "description": null,
+              "args": [
+                {
+                  "name": "columns",
+                  "description": null,
+                  "type": {
+                    "kind": "LIST",
+                    "name": null,
+                    "ofType": {
+                      "kind": "NON_NULL",
+                      "name": null,
+                      "ofType": {
+                        "kind": "ENUM",
+                        "name": "author_select_column",
+                        "ofType": null
+                      }
+                    }
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "distinct",
+                  "description": null,
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Boolean",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "max",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "author_max_fields",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "min",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "author_min_fields",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "author_max_fields",
+          "description": "aggregate max on columns",
+          "fields": [
+            {
+              "name": "link",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "name",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "author_min_fields",
+          "description": "aggregate min on columns",
+          "fields": [
+            {
+              "name": "link",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "name",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
           "name": "mutation_root",
           "description": "mutation root",
           "fields": [
+            {
+              "name": "delete_author",
+              "description": "delete data from the table: \"author\"",
+              "args": [
+                {
+                  "name": "where",
+                  "description": "filter the rows which have to be deleted",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "author_bool_exp",
+                      "ofType": null
+                    }
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "author_mutation_response",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
             {
               "name": "delete_proposal",
               "description": "delete data from the table: \"proposal\"",
@@ -2212,6 +3874,51 @@
               "type": {
                 "kind": "OBJECT",
                 "name": "proposal_mutation_response",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "insert_author",
+              "description": "insert data into the table: \"author\"",
+              "args": [
+                {
+                  "name": "objects",
+                  "description": "the rows to be inserted",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "LIST",
+                      "name": null,
+                      "ofType": {
+                        "kind": "NON_NULL",
+                        "name": null,
+                        "ofType": {
+                          "kind": "INPUT_OBJECT",
+                          "name": "author_insert_input",
+                          "ofType": null
+                        }
+                      }
+                    }
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "on_conflict",
+                  "description": "on conflict condition",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "author_on_conflict",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "author_mutation_response",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -2263,6 +3970,43 @@
               "deprecationReason": null
             },
             {
+              "name": "update_author",
+              "description": "update data of the table: \"author\"",
+              "args": [
+                {
+                  "name": "_set",
+                  "description": "sets the columns of the filtered rows to the given values",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "author_set_input",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "where",
+                  "description": "filter the rows which have to be updated",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "author_bool_exp",
+                      "ofType": null
+                    }
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "author_mutation_response",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "update_proposal",
               "description": "update data of the table: \"proposal\"",
               "args": [
@@ -2295,6 +4039,57 @@
                 "kind": "OBJECT",
                 "name": "proposal_mutation_response",
                 "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "author_mutation_response",
+          "description": "response of any mutation on the table \"author\"",
+          "fields": [
+            {
+              "name": "affected_rows",
+              "description": "number of affected rows by the mutation",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "returning",
+              "description": "data of the affected rows by the mutation",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "OBJECT",
+                      "name": "author",
+                      "ofType": null
+                    }
+                  }
+                }
               },
               "isDeprecated": false,
               "deprecationReason": null
@@ -2358,10 +4153,124 @@
         },
         {
           "kind": "INPUT_OBJECT",
+          "name": "author_insert_input",
+          "description": "input type for inserting data into table \"author\"",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "id",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "uuid",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "link",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "name",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "proposals",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "proposal_arr_rel_insert_input",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "proposal_arr_rel_insert_input",
+          "description": "input type for inserting array relation for remote table \"proposal\"",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "data",
+              "description": null,
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "proposal_insert_input",
+                      "ofType": null
+                    }
+                  }
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "on_conflict",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "proposal_on_conflict",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
           "name": "proposal_insert_input",
           "description": "input type for inserting data into table \"proposal\"",
           "fields": null,
           "inputFields": [
+            {
+              "name": "author",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "author_obj_rel_insert_input",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "author_id",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "uuid",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
             {
               "name": "description",
               "description": null,
@@ -2388,6 +4297,16 @@
               "type": {
                 "kind": "SCALAR",
                 "name": "numeric",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "frequency",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
                 "ofType": null
               },
               "defaultValue": null
@@ -2455,6 +4374,144 @@
           ],
           "interfaces": null,
           "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "author_obj_rel_insert_input",
+          "description": "input type for inserting object relation for remote table \"author\"",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "data",
+              "description": null,
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "author_insert_input",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "on_conflict",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "author_on_conflict",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "author_on_conflict",
+          "description": "on conflict condition type for table \"author\"",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "constraint",
+              "description": null,
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "ENUM",
+                  "name": "author_constraint",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "update_columns",
+              "description": null,
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "ENUM",
+                      "name": "author_update_column",
+                      "ofType": null
+                    }
+                  }
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "where",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "author_bool_exp",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "author_constraint",
+          "description": "unique or primary key constraints on table \"author\"",
+          "fields": null,
+          "inputFields": null,
+          "interfaces": null,
+          "enumValues": [
+            {
+              "name": "authors_pkey",
+              "description": "unique or primary key constraint",
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "author_update_column",
+          "description": "update columns of table \"author\"",
+          "fields": null,
+          "inputFields": null,
+          "interfaces": null,
+          "enumValues": [
+            {
+              "name": "id",
+              "description": "column name",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "link",
+              "description": "column name",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "name",
+              "description": "column name",
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
           "possibleTypes": null
         },
         {
@@ -2540,6 +4597,12 @@
           "interfaces": null,
           "enumValues": [
             {
+              "name": "author_id",
+              "description": "column name",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "description",
               "description": "column name",
               "isDeprecated": false,
@@ -2553,6 +4616,12 @@
             },
             {
               "name": "endLongitude",
+              "description": "column name",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "frequency",
               "description": "column name",
               "isDeprecated": false,
               "deprecationReason": null
@@ -2598,10 +4667,61 @@
         },
         {
           "kind": "INPUT_OBJECT",
+          "name": "author_set_input",
+          "description": "input type for updating data in table \"author\"",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "id",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "uuid",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "link",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "name",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
           "name": "proposal_set_input",
           "description": "input type for updating data in table \"proposal\"",
           "fields": null,
           "inputFields": [
+            {
+              "name": "author_id",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "uuid",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
             {
               "name": "description",
               "description": null,
@@ -2628,6 +4748,16 @@
               "type": {
                 "kind": "SCALAR",
                 "name": "numeric",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "frequency",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
                 "ofType": null
               },
               "defaultValue": null
@@ -2702,6 +4832,207 @@
           "name": "subscription_root",
           "description": "subscription root",
           "fields": [
+            {
+              "name": "author",
+              "description": "fetch data from the table: \"author\"",
+              "args": [
+                {
+                  "name": "distinct_on",
+                  "description": "distinct select on columns",
+                  "type": {
+                    "kind": "LIST",
+                    "name": null,
+                    "ofType": {
+                      "kind": "NON_NULL",
+                      "name": null,
+                      "ofType": {
+                        "kind": "ENUM",
+                        "name": "author_select_column",
+                        "ofType": null
+                      }
+                    }
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "limit",
+                  "description": "limit the number of rows returned",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "offset",
+                  "description": "skip the first n rows. Use only with order_by",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "order_by",
+                  "description": "sort the rows by one or more columns",
+                  "type": {
+                    "kind": "LIST",
+                    "name": null,
+                    "ofType": {
+                      "kind": "NON_NULL",
+                      "name": null,
+                      "ofType": {
+                        "kind": "INPUT_OBJECT",
+                        "name": "author_order_by",
+                        "ofType": null
+                      }
+                    }
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "where",
+                  "description": "filter the rows returned",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "author_bool_exp",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "OBJECT",
+                      "name": "author",
+                      "ofType": null
+                    }
+                  }
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "author_aggregate",
+              "description": "fetch aggregated fields from the table: \"author\"",
+              "args": [
+                {
+                  "name": "distinct_on",
+                  "description": "distinct select on columns",
+                  "type": {
+                    "kind": "LIST",
+                    "name": null,
+                    "ofType": {
+                      "kind": "NON_NULL",
+                      "name": null,
+                      "ofType": {
+                        "kind": "ENUM",
+                        "name": "author_select_column",
+                        "ofType": null
+                      }
+                    }
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "limit",
+                  "description": "limit the number of rows returned",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "offset",
+                  "description": "skip the first n rows. Use only with order_by",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "order_by",
+                  "description": "sort the rows by one or more columns",
+                  "type": {
+                    "kind": "LIST",
+                    "name": null,
+                    "ofType": {
+                      "kind": "NON_NULL",
+                      "name": null,
+                      "ofType": {
+                        "kind": "INPUT_OBJECT",
+                        "name": "author_order_by",
+                        "ofType": null
+                      }
+                    }
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "where",
+                  "description": "filter the rows returned",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "author_bool_exp",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "author_aggregate",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "author_by_pk",
+              "description": "fetch data from the table: \"author\" using primary key columns",
+              "args": [
+                {
+                  "name": "id",
+                  "description": null,
+                  "type": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "uuid",
+                      "ofType": null
+                    }
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "author",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
             {
               "name": "proposal",
               "description": "fetch data from the table: \"proposal\"",
@@ -3717,20 +6048,10 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "proposal_aggregate_order_by",
-          "description": "order by aggregate values of table \"proposal\"",
+          "name": "author_aggregate_order_by",
+          "description": "order by aggregate values of table \"author\"",
           "fields": null,
           "inputFields": [
-            {
-              "name": "avg",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "proposal_avg_order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
             {
               "name": "count",
               "description": null,
@@ -3746,7 +6067,7 @@
               "description": null,
               "type": {
                 "kind": "INPUT_OBJECT",
-                "name": "proposal_max_order_by",
+                "name": "author_max_order_by",
                 "ofType": null
               },
               "defaultValue": null
@@ -3756,77 +6077,7 @@
               "description": null,
               "type": {
                 "kind": "INPUT_OBJECT",
-                "name": "proposal_min_order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "stddev",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "proposal_stddev_order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "stddev_pop",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "proposal_stddev_pop_order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "stddev_samp",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "proposal_stddev_samp_order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "sum",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "proposal_sum_order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "var_pop",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "proposal_var_pop_order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "var_samp",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "proposal_var_samp_order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "variance",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "proposal_variance_order_by",
+                "name": "author_min_order_by",
                 "ofType": null
               },
               "defaultValue": null
@@ -3838,12 +6089,12 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "proposal_avg_order_by",
-          "description": "order by avg() on columns of table \"proposal\"",
+          "name": "author_max_order_by",
+          "description": "order by max() on columns of table \"author\"",
           "fields": null,
           "inputFields": [
             {
-              "name": "endLatitude",
+              "name": "link",
               "description": null,
               "type": {
                 "kind": "ENUM",
@@ -3853,27 +6104,7 @@
               "defaultValue": null
             },
             {
-              "name": "endLongitude",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "startLatitude",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "startLongitude",
+              "name": "name",
               "description": null,
               "type": {
                 "kind": "ENUM",
@@ -3889,12 +6120,12 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "proposal_max_order_by",
-          "description": "order by max() on columns of table \"proposal\"",
+          "name": "author_min_order_by",
+          "description": "order by min() on columns of table \"author\"",
           "fields": null,
           "inputFields": [
             {
-              "name": "description",
+              "name": "link",
               "description": null,
               "type": {
                 "kind": "ENUM",
@@ -3904,57 +6135,7 @@
               "defaultValue": null
             },
             {
-              "name": "endLatitude",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "endLongitude",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "kind",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "startLatitude",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "startLongitude",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "title",
+              "name": "name",
               "description": null,
               "type": {
                 "kind": "ENUM",
@@ -3970,446 +6151,8 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "proposal_min_order_by",
-          "description": "order by min() on columns of table \"proposal\"",
-          "fields": null,
-          "inputFields": [
-            {
-              "name": "description",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "endLatitude",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "endLongitude",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "kind",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "startLatitude",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "startLongitude",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "title",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            }
-          ],
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "INPUT_OBJECT",
-          "name": "proposal_stddev_order_by",
-          "description": "order by stddev() on columns of table \"proposal\"",
-          "fields": null,
-          "inputFields": [
-            {
-              "name": "endLatitude",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "endLongitude",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "startLatitude",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "startLongitude",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            }
-          ],
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "INPUT_OBJECT",
-          "name": "proposal_stddev_pop_order_by",
-          "description": "order by stddev_pop() on columns of table \"proposal\"",
-          "fields": null,
-          "inputFields": [
-            {
-              "name": "endLatitude",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "endLongitude",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "startLatitude",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "startLongitude",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            }
-          ],
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "INPUT_OBJECT",
-          "name": "proposal_stddev_samp_order_by",
-          "description": "order by stddev_samp() on columns of table \"proposal\"",
-          "fields": null,
-          "inputFields": [
-            {
-              "name": "endLatitude",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "endLongitude",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "startLatitude",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "startLongitude",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            }
-          ],
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "INPUT_OBJECT",
-          "name": "proposal_sum_order_by",
-          "description": "order by sum() on columns of table \"proposal\"",
-          "fields": null,
-          "inputFields": [
-            {
-              "name": "endLatitude",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "endLongitude",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "startLatitude",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "startLongitude",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            }
-          ],
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "INPUT_OBJECT",
-          "name": "proposal_var_pop_order_by",
-          "description": "order by var_pop() on columns of table \"proposal\"",
-          "fields": null,
-          "inputFields": [
-            {
-              "name": "endLatitude",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "endLongitude",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "startLatitude",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "startLongitude",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            }
-          ],
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "INPUT_OBJECT",
-          "name": "proposal_var_samp_order_by",
-          "description": "order by var_samp() on columns of table \"proposal\"",
-          "fields": null,
-          "inputFields": [
-            {
-              "name": "endLatitude",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "endLongitude",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "startLatitude",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "startLongitude",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            }
-          ],
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "INPUT_OBJECT",
-          "name": "proposal_variance_order_by",
-          "description": "order by variance() on columns of table \"proposal\"",
-          "fields": null,
-          "inputFields": [
-            {
-              "name": "endLatitude",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "endLongitude",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "startLatitude",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "startLongitude",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            }
-          ],
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "INPUT_OBJECT",
-          "name": "proposal_arr_rel_insert_input",
-          "description": "input type for inserting array relation for remote table \"proposal\"",
+          "name": "author_arr_rel_insert_input",
+          "description": "input type for inserting array relation for remote table \"author\"",
           "fields": null,
           "inputFields": [
             {
@@ -4426,7 +6169,7 @@
                     "name": null,
                     "ofType": {
                       "kind": "INPUT_OBJECT",
-                      "name": "proposal_insert_input",
+                      "name": "author_insert_input",
                       "ofType": null
                     }
                   }
@@ -4439,7 +6182,7 @@
               "description": null,
               "type": {
                 "kind": "INPUT_OBJECT",
-                "name": "proposal_on_conflict",
+                "name": "author_on_conflict",
                 "ofType": null
               },
               "defaultValue": null
@@ -4542,7 +6285,7 @@
   "extensions": {
     "graphql-config": {
       "source": "http://postcovidurbanism.eastus.azurecontainer.io/v1/graphql",
-      "timestamp": "Sun Apr 19 2020 22:58:43 GMT+0200 (Central European Summer Time)"
+      "timestamp": "Tue Apr 21 2020 19:49:21 GMT+0200 (Central European Summer Time)"
     }
   }
 }
