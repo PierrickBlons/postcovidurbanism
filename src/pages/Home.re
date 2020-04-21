@@ -1,3 +1,5 @@
+open DeckGl.Layers.Line;
+
 let initialViewState: DeckGl.viewport = {
   longitude: 1.091269,
   latitude: 49.443268,
@@ -12,27 +14,29 @@ let linePedestrianColor: (int, int, int, int) = (36, 142, 128, 255);
 let lineCyclingColor: (int, int, int, int) = (0, 128, 255, 200);
 let lineSchoolColor: (int, int, int, int) = (255, 191, 0, 255);
 
-let getColor = (kind) => 
-    switch (kind) {
-      | "pieton" => linePedestrianColor
-      | "velo" => lineCyclingColor
-      | "ecole" => lineSchoolColor
-      | _ => (0, 0, 0, 0)
-    };
+let getColor = kind =>
+  switch (kind) {
+  | "pieton" => linePedestrianColor
+  | "velo" => lineCyclingColor
+  | "ecole" => lineSchoolColor
+  | _ => (0, 0, 0, 0)
+  };
 
 type state = {
   label: string,
   visible: bool,
   description: string,
+  authorName: string,
 };
 
 type action =
-  | Click(DeckGl.Layers.Line.info);
+  | Click(info);
 
 let initialState = {
   label: "Urbanisme tactique post covid",
   description: {j|Sélectionner un élément de la cartographie pour faire apparaitre le détail de la proposition|j},
   visible: true,
+  authorName: "",
 };
 
 [@react.component]
@@ -47,6 +51,7 @@ let make = () => {
             label: info.detail.label,
             description: info.detail.description,
             visible: true,
+            authorName: info.detail.authorName,
           }
         },
       initialState,
@@ -69,17 +74,21 @@ let make = () => {
               Some(endLatitude),
               Some(endLongitude),
             ) => {
-              DeckGl.Layers.Line.label: proposal##title,
-              DeckGl.Layers.Line.kind: proposal##kind,
-              DeckGl.Layers.Line.description:
+              label: proposal##title,
+              kind: proposal##kind,
+              authorName:
+                proposal##author
+                ->Belt.Option.map(author => author##name)
+                ->Belt.Option.getWithDefault(""),
+              description:
                 proposal##description->Belt.Option.getWithDefault(""),
-              DeckGl.Layers.Line.sourcePosition: (
+              sourcePosition: (
                 Js.Json.decodeNumber(startLongitude)
                 ->Belt.Option.getWithDefault(0.),
                 Js.Json.decodeNumber(startLatitude)
                 ->Belt.Option.getWithDefault(0.),
               ),
-              DeckGl.Layers.Line.targetPosition: (
+              targetPosition: (
                 Js.Json.decodeNumber(endLongitude)
                 ->Belt.Option.getWithDefault(0.),
                 Js.Json.decodeNumber(endLatitude)
@@ -90,6 +99,7 @@ let make = () => {
               label: "",
               kind: "",
               description: "",
+              authorName: "",
               sourcePosition: (0., 0.),
               targetPosition: (0., 0.),
             }
@@ -99,7 +109,7 @@ let make = () => {
     };
 
   let layers = [|
-    DeckGl.Layers.Line.create({
+    create({
       id: layerLineId,
       data,
       getColor: d => getColor(d.kind),
@@ -115,6 +125,11 @@ let make = () => {
       mapStyle="mapbox://styles/mapbox/dark-v10"
       mapboxApiAccessToken=Env.mapbox_token_api
     />
-    <Tooltip isVisible=state.visible label=state.label description=state.description />
+    <Tooltip
+      isVisible={state.visible}
+      label={state.label}
+      description={state.description}
+      authorName={state.authorName}
+    />
   </DeckGl>;
 };
