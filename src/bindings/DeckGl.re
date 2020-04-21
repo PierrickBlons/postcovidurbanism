@@ -8,7 +8,8 @@ module Layers = {
       description: string,
       sourcePosition: position,
       targetPosition: position,
-      kind: string
+      kind: string,
+      authorName: string,
     };
     type info = {
       [@bs.as "object"]detail: data,
