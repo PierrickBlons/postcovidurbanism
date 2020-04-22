@@ -1,8 +1,9 @@
 module Layers = {
   type t;
+  
+  type position = (float, float);
 
   module Line = {
-    type position = (float, float);
     type data = {
       label: string,
       description: string,
@@ -28,6 +29,23 @@ module Layers = {
     [@bs.module "@deck.gl/layers"] [@bs.new]
     external create: obj => t = "LineLayer";
   };
+
+  module Path = {
+    type data = {
+      path: array(position),
+    };
+
+    type obj = {
+      id: string,
+      data: array(data),
+      pickable: bool,
+      widthMinPixels: int,
+      getPath: (data) => array((int, int)),
+    };
+
+    [@bs.module "@deck.gl/layers"] [@bs.new]
+    external create: obj => t = "PathLayer";
+  }
 };
 
 type viewport = {
