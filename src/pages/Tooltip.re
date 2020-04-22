@@ -5,7 +5,7 @@ let isEmpty = content => content !== "";
 
 [@react.component]
 let make =
-    (~isVisible: bool, ~label: string, ~description: string, ~authorName) => {
+    (~isVisible: bool, ~label: string, ~description: string, ~authorName: string, ~authorLink: string) => {
 
   let hasAuthor = authorName->isEmpty;
 
@@ -14,7 +14,7 @@ let make =
          {React.string(label)} </h3>
       <h4 className=Styling.title4(hasAuthor)>
         {React.string("Par: ")}
-        <a href="">{React.string(authorName)}</a> 
+        <a href=authorLink target="_blank">{React.string(authorName)}</a> 
       </h4>
       <p> {React.string(description)} </p>
     </div>;

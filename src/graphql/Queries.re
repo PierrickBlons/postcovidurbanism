@@ -13,6 +13,7 @@ module GetProposalsListQuery = [%graphql {|
                 kind
                 author {
                     name
+                    link
                 }
             }
         }
