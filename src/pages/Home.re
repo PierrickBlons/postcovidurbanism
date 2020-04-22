@@ -27,6 +27,7 @@ type state = {
   visible: bool,
   description: string,
   authorName: string,
+  authorLink: string,
 };
 
 type action =
@@ -37,6 +38,7 @@ let initialState = {
   description: {j|Sélectionner un élément de la cartographie pour faire apparaitre le détail de la proposition|j},
   visible: true,
   authorName: "",
+  authorLink: "",
 };
 
 [@react.component]
@@ -52,6 +54,7 @@ let make = () => {
             description: info.detail.description,
             visible: true,
             authorName: info.detail.authorName,
+            authorLink: info.detail.authorLink,
           }
         },
       initialState,
@@ -78,8 +81,10 @@ let make = () => {
               kind: proposal##kind,
               authorName:
                 proposal##author
-                ->Belt.Option.map(author => author##name)
-                ->Belt.Option.getWithDefault(""),
+                ->Belt.Option.mapWithDefault("", author => author##name),
+              authorLink:
+                proposal##author
+                ->Belt.Option.mapWithDefault("", author => author##link->Belt.Option.getWithDefault("")),
               description:
                 proposal##description->Belt.Option.getWithDefault(""),
               sourcePosition: (
@@ -100,6 +105,7 @@ let make = () => {
               kind: "",
               description: "",
               authorName: "",
+              authorLink: "",
               sourcePosition: (0., 0.),
               targetPosition: (0., 0.),
             }
@@ -130,6 +136,7 @@ let make = () => {
       label={state.label}
       description={state.description}
       authorName={state.authorName}
+      authorLink={state.authorLink}
     />
   </DeckGl>;
 };

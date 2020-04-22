@@ -10,6 +10,7 @@ module Layers = {
       targetPosition: position,
       kind: string,
       authorName: string,
+      authorLink: string,
     };
     type info = {
       [@bs.as "object"]detail: data,
