@@ -18,7 +18,9 @@
   "bs-dependencies": [
     "reason-react",
     "reason-apollo",
-    "reason-apollo-hooks"
+    "reason-apollo-hooks",
+    "bs-css",
+    "bs-css-emotion"
   ],
   "ppx-flags": [
     "@baransu/graphql_ppx_re/ppx"
