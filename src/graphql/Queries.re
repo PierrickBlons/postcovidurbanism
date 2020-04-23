@@ -11,6 +11,7 @@ module GetProposalsListQuery = [%graphql {|
                 endLongitude
                 description
                 kind
+                path
                 author {
                     name
                     link
