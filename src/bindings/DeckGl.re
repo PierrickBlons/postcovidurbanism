@@ -2,31 +2,46 @@ module Layers = {
   type t;
 
   module Line = {
-    type position = (float, float);
-    type data = {
-      label: string,
-      description: string,
-      sourcePosition: position,
-      targetPosition: position,
-      kind: string,
-      authorName: string,
-      authorLink: string,
-    };
-    type info = {
-      [@bs.as "object"]detail: data,
-      x: int,
-      y: int
+    type coordinates = array(float);
+    type geometry = {
+      [@bs.as "type"]_type: string,
+      coordinates: array(coordinates),
     }
+
+    type feature = {
+      [@bs.as "type"]_type: string,
+      geometry: geometry,
+    }
+
+    type geojson = {
+      [@bs.as "type"]_type: string,
+      version: string,
+      features: array(feature),
+    }
+
+    // type data = {
+    //   label: string,
+    //   description: string,
+    //   sourcePosition: position,
+    //   targetPosition: position,
+    //   kind: string,
+    //   authorName: string,
+    //   authorLink: string,
+    // // };
+    // type info = {
+    //   [@bs.as "object"]detail: geojson,
+    //   x: int,
+    //   y: int
+    // }
     type obj = {
       id: string,
-      data: array(data),
-      getColor: data => (int, int, int, int),
-      getWidth: int,
-      onClick: info => unit,
-      pickable: bool
+      data: geojson,
+      getLineColor: unit => (int, int, int, int),
+      pickable: bool,
     };
+    
     [@bs.module "@deck.gl/layers"] [@bs.new]
-    external create: obj => t = "LineLayer";
+    external create: obj => t = "GeoJsonLayer";
   };
 };
 
