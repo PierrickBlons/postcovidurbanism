@@ -35,7 +35,7 @@ module Layers = {
     // }
     type obj = {
       id: string,
-      data: geojson,
+      data: Js.Json.t,
       getLineColor: unit => (int, int, int, int),
       pickable: bool,
     };
