@@ -1820,6 +1820,16 @@
               "defaultValue": null
             },
             {
+              "name": "path",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "jsonb_comparison_exp",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
               "name": "startLatitude",
               "description": null,
               "type": {
@@ -2101,6 +2111,199 @@
         {
           "kind": "SCALAR",
           "name": "point",
+          "description": null,
+          "fields": null,
+          "inputFields": null,
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "jsonb_comparison_exp",
+          "description": "expression to compare columns of type jsonb. All fields are combined with logical 'AND'.",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "_contained_in",
+              "description": "is the column contained in the given json value",
+              "type": {
+                "kind": "SCALAR",
+                "name": "jsonb",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_contains",
+              "description": "does the column contain the given json value at the top level",
+              "type": {
+                "kind": "SCALAR",
+                "name": "jsonb",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_eq",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "jsonb",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_gt",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "jsonb",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_gte",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "jsonb",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_has_key",
+              "description": "does the string exist as a top-level key in the column",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_has_keys_all",
+              "description": "do all of these strings exist as top-level keys in the column",
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  }
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_has_keys_any",
+              "description": "do any of these strings exist as top-level keys in the column",
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  }
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_in",
+              "description": null,
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "SCALAR",
+                    "name": "jsonb",
+                    "ofType": null
+                  }
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_is_null",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_lt",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "jsonb",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_lte",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "jsonb",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_neq",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "jsonb",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "_nin",
+              "description": null,
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "SCALAR",
+                    "name": "jsonb",
+                    "ofType": null
+                  }
+                }
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "SCALAR",
+          "name": "jsonb",
           "description": null,
           "fields": null,
           "inputFields": null,
@@ -2394,6 +2597,12 @@
               "deprecationReason": null
             },
             {
+              "name": "path",
+              "description": "column name",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "startLatitude",
               "description": "column name",
               "isDeprecated": false,
@@ -2502,6 +2711,16 @@
             },
             {
               "name": "location",
+              "description": null,
+              "type": {
+                "kind": "ENUM",
+                "name": "order_by",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "path",
               "description": null,
               "type": {
                 "kind": "ENUM",
@@ -2661,6 +2880,29 @@
               "type": {
                 "kind": "SCALAR",
                 "name": "point",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "path",
+              "description": null,
+              "args": [
+                {
+                  "name": "path",
+                  "description": "JSON select path",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "SCALAR",
+                "name": "jsonb",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -4011,6 +4253,56 @@
               "description": "update data of the table: \"proposal\"",
               "args": [
                 {
+                  "name": "_append",
+                  "description": "append existing jsonb value of filtered columns with new jsonb value",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "proposal_append_input",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "_delete_at_path",
+                  "description": "delete the field or element with specified path (for JSON arrays, negative integers count from the end)",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "proposal_delete_at_path_input",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "_delete_elem",
+                  "description": "delete the array element with specified index (negative integers count from the end). throws an error if top level container is not an array",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "proposal_delete_elem_input",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "_delete_key",
+                  "description": "delete key/value pair or string element. key/value pairs are matched based on their key value",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "proposal_delete_key_input",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "_prepend",
+                  "description": "prepend existing jsonb value of filtered columns with new jsonb value",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "proposal_prepend_input",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
                   "name": "_set",
                   "description": "sets the columns of the filtered rows to the given values",
                   "type": {
@@ -4342,6 +4634,16 @@
               "defaultValue": null
             },
             {
+              "name": "path",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "jsonb",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
               "name": "startLatitude",
               "description": null,
               "type": {
@@ -4645,6 +4947,12 @@
               "deprecationReason": null
             },
             {
+              "name": "path",
+              "description": "column name",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "startLatitude",
               "description": "column name",
               "isDeprecated": false,
@@ -4697,6 +5005,115 @@
               "type": {
                 "kind": "SCALAR",
                 "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "proposal_append_input",
+          "description": "append existing jsonb value of filtered columns with new jsonb value",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "path",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "jsonb",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "proposal_delete_at_path_input",
+          "description": "delete the field or element with specified path (for JSON arrays, negative integers count from the end)",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "path",
+              "description": null,
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "proposal_delete_elem_input",
+          "description": "delete the array element with specified index (negative integers count from the end). throws an error if top level container is not an array",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "path",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "proposal_delete_key_input",
+          "description": "delete key/value pair or string element. key/value pairs are matched based on their key value",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "path",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "proposal_prepend_input",
+          "description": "prepend existing jsonb value of filtered columns with new jsonb value",
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "path",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "jsonb",
                 "ofType": null
               },
               "defaultValue": null
@@ -4788,6 +5205,16 @@
               "type": {
                 "kind": "SCALAR",
                 "name": "point",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "path",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "jsonb",
                 "ofType": null
               },
               "defaultValue": null
@@ -6285,7 +6712,7 @@
   "extensions": {
     "graphql-config": {
       "source": "http://postcovidurbanism.eastus.azurecontainer.io/v1/graphql",
-      "timestamp": "Tue Apr 21 2020 19:49:21 GMT+0200 (Central European Summer Time)"
+      "timestamp": "Thu Apr 23 2020 14:09:48 GMT+0200 (Central European Summer Time)"
     }
   }
 }
