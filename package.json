@@ -25,6 +25,7 @@
     "@deck.gl/layers": "^8.1.2",
     "@deck.gl/react": "^8.1.2",
     "bs-css-emotion": "^1.2.0",
+    "decco": "^1.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-map-gl": "^5.2.5",

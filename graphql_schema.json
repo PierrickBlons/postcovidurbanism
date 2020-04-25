@@ -1810,16 +1810,6 @@
               "defaultValue": null
             },
             {
-              "name": "location",
-              "description": null,
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "point_comparison_exp",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
               "name": "path",
               "description": null,
               "type": {
@@ -1984,133 +1974,6 @@
         {
           "kind": "SCALAR",
           "name": "numeric",
-          "description": null,
-          "fields": null,
-          "inputFields": null,
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "INPUT_OBJECT",
-          "name": "point_comparison_exp",
-          "description": "expression to compare columns of type point. All fields are combined with logical 'AND'.",
-          "fields": null,
-          "inputFields": [
-            {
-              "name": "_eq",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "point",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "_gt",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "point",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "_gte",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "point",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "_in",
-              "description": null,
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "point",
-                    "ofType": null
-                  }
-                }
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "_is_null",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "_lt",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "point",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "_lte",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "point",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "_neq",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "point",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "_nin",
-              "description": null,
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "point",
-                    "ofType": null
-                  }
-                }
-              },
-              "defaultValue": null
-            }
-          ],
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "SCALAR",
-          "name": "point",
           "description": null,
           "fields": null,
           "inputFields": null,
@@ -2591,12 +2454,6 @@
               "deprecationReason": null
             },
             {
-              "name": "location",
-              "description": "column name",
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
               "name": "path",
               "description": "column name",
               "isDeprecated": false,
@@ -2701,16 +2558,6 @@
             },
             {
               "name": "kind",
-              "description": null,
-              "type": {
-                "kind": "ENUM",
-                "name": "order_by",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "location",
               "description": null,
               "type": {
                 "kind": "ENUM",
@@ -2869,18 +2716,6 @@
                   "name": "String",
                   "ofType": null
                 }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "location",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "point",
-                "ofType": null
               },
               "isDeprecated": false,
               "deprecationReason": null
@@ -4624,16 +4459,6 @@
               "defaultValue": null
             },
             {
-              "name": "location",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "point",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
               "name": "path",
               "description": null,
               "type": {
@@ -4941,12 +4766,6 @@
               "deprecationReason": null
             },
             {
-              "name": "location",
-              "description": "column name",
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
               "name": "path",
               "description": "column name",
               "isDeprecated": false,
@@ -5195,16 +5014,6 @@
               "type": {
                 "kind": "SCALAR",
                 "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "location",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "point",
                 "ofType": null
               },
               "defaultValue": null
@@ -6712,7 +6521,7 @@
   "extensions": {
     "graphql-config": {
       "source": "http://postcovidurbanism.eastus.azurecontainer.io/v1/graphql",
-      "timestamp": "Thu Apr 23 2020 14:09:48 GMT+0200 (Central European Summer Time)"
+      "timestamp": "Sat Apr 25 2020 18:15:45 GMT+0200 (Central European Summer Time)"
     }
   }
 }
