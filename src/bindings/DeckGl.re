@@ -4,11 +4,6 @@ module Layers = {
   module GeoJson = {
     type color = (int, int, int, int);
 
-    [@decco]
-    type latitude = float;
-    [@decco]
-    type longitude = float;
-
     type property = {
       label: string,
       description: string,
@@ -17,20 +12,12 @@ module Layers = {
       authorLink: string,
     };
 
-    [@decco]
-    type geometry = {
-      [@decco.key "type"] [@bs.as "type"]
-      _type: string,
-      // Why do we have an extra value ?
-      coordinates: array((longitude, latitude, float)),
-    };
     type feature = {
       [@bs.as "type"]
       _type: string,
-      geometry,
+      geometry: Types.geometry,
       properties: property,
     };
-
     let defaultFeature = {
       _type: "Feature",
       geometry: {
