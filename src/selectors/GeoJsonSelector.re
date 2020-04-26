@@ -17,7 +17,8 @@ let makeProperties =
 
 let toCoordonates =
   fun
-  | (Some(a), Some(b)) => Some((a, b, 0.))
+  | (Some(a), Some(b)) =>
+    Some((a, b, Types.Coordonate.altitude_from_float(0.)))
   | _ => None;
 
 let makeFeature = (proposal: Types.proposal) => {
