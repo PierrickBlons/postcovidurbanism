@@ -15,10 +15,10 @@ let makeProperties =
   };
 };
 
-let toCoordonates =
+let toCoordinates =
   fun
   | (Some(a), Some(b)) =>
-    Some((a, b, Types.Coordonate.altitude_from_float(0.)))
+    Some((a, b, Types.Coordinate.altitude_from_float(0.)))
   | _ => None;
 
 let makeFeature = (proposal: Types.proposal) => {
@@ -35,9 +35,9 @@ let makeFeature = (proposal: Types.proposal) => {
     | Some(path) => path
     | None =>
       let startPoint =
-        (proposal.startLongitude, proposal.startLatitude)->toCoordonates;
+        (proposal.startLongitude, proposal.startLatitude)->toCoordinates;
       let endPoint =
-        (proposal.endLongitude, proposal.endLatitude)->toCoordonates;
+        (proposal.endLongitude, proposal.endLatitude)->toCoordinates;
 
       {
         _type: "LineString",

@@ -4,11 +4,11 @@ open Types;
 module Extract = {
   let optionalLatitude = someFloat =>
     someFloat
-    ->Belt.Option.map(Coordonate.latitude_decode)
+    ->Belt.Option.map(Coordinate.latitude_decode)
     ->Belt.Option.flatMap(Utils.resultToOption);
   let optionalLongitude = someFloat =>
     someFloat
-    ->Belt.Option.map(Coordonate.longitude_decode)
+    ->Belt.Option.map(Coordinate.longitude_decode)
     ->Belt.Option.flatMap(Utils.resultToOption);
   let path = path =>
     path

@@ -2,7 +2,7 @@ type boundaries('a) = {
   min: 'a,
   max: 'a,
 };
-module type Coordonate = {
+module type Coordinate = {
   [@decco]
   type latitude;
   [@decco]
@@ -19,7 +19,7 @@ module type Coordonate = {
   let isValid: (boundaries(longitude), boundaries(latitude), t) => bool;
 };
 
-module Coordonate: Coordonate = {
+module Coordinate: Coordinate = {
   [@decco]
   type latitude = float;
   [@decco]
@@ -51,7 +51,7 @@ module Coordonate: Coordonate = {
 type geometry = {
   [@decco.key "type"] [@bs.as "type"]
   _type: string,
-  coordinates: array(Coordonate.t),
+  coordinates: array(Coordinate.t),
 };
 
 type author = {
@@ -61,10 +61,10 @@ type author = {
 
 type proposal = {
   title: string,
-  startLatitude: option(Coordonate.latitude),
-  startLongitude: option(Coordonate.longitude),
-  endLatitude: option(Coordonate.latitude),
-  endLongitude: option(Coordonate.longitude),
+  startLatitude: option(Coordinate.latitude),
+  startLongitude: option(Coordinate.longitude),
+  endLatitude: option(Coordinate.latitude),
+  endLongitude: option(Coordinate.longitude),
   description: option(string),
   kind: string,
   path: option(geometry),
