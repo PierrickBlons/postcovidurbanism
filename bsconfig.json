@@ -6,17 +6,28 @@
   "sources": [{
     "dir" : "src",
     "subdirs" : true
+  },{
+    "dir" : "__tests__",
+    "type": "dev",
+    "subdirs" : true
   }
   ],
   "bsc-flags": ["-bs-super-errors", "-bs-no-version-header"],
   "package-specs": [{
     "module": "es6",
     "in-source": true
-  }],
+  },
+  {
+    "module": "commonjs"
+  }
+  ],
   "suffix": ".js",
   "namespace": true,
+  "bs-dev-dependencies": [
+    "@glennsl/bs-jest"
+  ],
   "bs-dependencies": [
-      "decco",
+     "decco",
     "reason-react",
     "reason-apollo",
     "reason-apollo-hooks",
