@@ -3,9 +3,11 @@
 .bsb.lock
 __stories__/**/*.bs.js
 src/**/*.js
+__tests__/**/*.js
+!__tests__/__snapshots__/snapshotResolver.js
 npm-debug.log
 build/
-/lib/bs/
+/lib/
 /node_modules/
 /bundleOutput/
 .graphql_ppx_cache/
