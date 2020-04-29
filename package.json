@@ -12,6 +12,7 @@
     "get-schema": "yarn graphql get-schema",
     "test": "jest",
     "test:watch": "jest --watch",
+    "pretest:ci": "yarn bsb:build",
     "test:ci": "jest --ci"
   },
   "keywords": [
