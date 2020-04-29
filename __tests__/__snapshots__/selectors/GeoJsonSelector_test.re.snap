@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GeoJsonSelector makeProperties With no optional props 1`] = `
+Object {
+  "authorLink": "",
+  "authorName": "",
+  "description": "",
+  "kind": "kind",
+  "label": "title",
+}
+`;
