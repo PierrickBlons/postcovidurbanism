@@ -15,89 +15,80 @@ describe("Types", () => {
         min: (-180.)->Coordinate.longitude_from_float,
       };
 
-      test(
-        "Gives false when longitudeBoundaries max is above coordinate longitude",
-        () => {
+      let assertIsValid = (coordinate, result) => {
         expect(
           Coordinate.isValid(
             longitudeBoundaries,
             latitudeBoundaries,
-            (
-              200.->Coordinate.longitude_from_float,
-              0.->Coordinate.latitude_from_float,
-              0.->Coordinate.altitude_from_float,
-            ),
+            coordinate,
           ),
         )
-        |> toEqual(false)
+        |> toEqual(result);
+      };
+
+      test(
+        "Gives false when longitudeBoundaries max is above coordinate longitude",
+        () => {
+        assertIsValid(
+          (
+            200.->Coordinate.longitude_from_float,
+            0.->Coordinate.latitude_from_float,
+            0.->Coordinate.altitude_from_float,
+          ),
+          false,
+        )
       });
 
       test(
         "Gives false when longitudeBoundaries min is below coordinate longitude",
         () => {
-        expect(
-          Coordinate.isValid(
-            longitudeBoundaries,
-            latitudeBoundaries,
-            (
-              (-219.)->Coordinate.longitude_from_float,
-              0.->Coordinate.latitude_from_float,
-              0.->Coordinate.altitude_from_float,
-            ),
+        assertIsValid(
+          (
+            (-219.)->Coordinate.longitude_from_float,
+            0.->Coordinate.latitude_from_float,
+            0.->Coordinate.altitude_from_float,
           ),
+          false,
         )
-        |> toEqual(false)
       });
 
       test(
         "Gives false when latitudeBoundaries max is above coordinate latitude",
         () => {
-        expect(
-          Coordinate.isValid(
-            longitudeBoundaries,
-            latitudeBoundaries,
-            (
-              0.->Coordinate.longitude_from_float,
-              99.->Coordinate.latitude_from_float,
-              0.->Coordinate.altitude_from_float,
-            ),
+        assertIsValid(
+          (
+            0.->Coordinate.longitude_from_float,
+            99.->Coordinate.latitude_from_float,
+            0.->Coordinate.altitude_from_float,
           ),
+          false,
         )
-        |> toEqual(false)
       });
 
       test(
         "Gives false when latitudeBoundaries min is below coordinate latitude",
         () => {
-        expect(
-          Coordinate.isValid(
-            longitudeBoundaries,
-            latitudeBoundaries,
-            (
-              0.->Coordinate.longitude_from_float,
-              (-99.)->Coordinate.latitude_from_float,
-              0.->Coordinate.altitude_from_float,
-            ),
+        assertIsValid(
+          (
+            0.->Coordinate.longitude_from_float,
+            (-99.)->Coordinate.latitude_from_float,
+            0.->Coordinate.altitude_from_float,
           ),
+          false,
         )
-        |> toEqual(false)
       });
 
       test(
         "Gives true when coordinate latitude is between boundaries latitude min and max and coordinate longitude is between boudaries longitude min and max",
         () => {
-        expect(
-          Coordinate.isValid(
-            longitudeBoundaries,
-            latitudeBoundaries,
-            (
-              12.->Coordinate.longitude_from_float,
-              (-42.)->Coordinate.latitude_from_float,
-              0.->Coordinate.altitude_from_float,
-            ),
+        assertIsValid(
+          (
+            12.->Coordinate.longitude_from_float,
+            (-42.)->Coordinate.latitude_from_float,
+            0.->Coordinate.altitude_from_float,
           ),
+          true,
         )
-        |> toEqual(true)
       });
     })
   })
