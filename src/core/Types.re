@@ -22,9 +22,7 @@ module type Coordinate = {
   let longitude_from_float: float => longitude;
   let altitude_from_float: float => altitude;
 
-  let isWithinLatitudeBoundaries: (boundaries(latitude), latitude) => bool;
   let isWithinBoundaries: (boundaries('a), 'a) => bool;
-
   let isWithinBox: (boundaryBox(longitude, latitude), t) => bool;
 };
 
@@ -41,9 +39,6 @@ module Coordinate: Coordinate = {
   let latitude_from_float = lat => lat;
   let longitude_from_float = long => long;
   let altitude_from_float = lat => lat;
-
-  let isWithinLatitudeBoundaries = (boundaries, latitude) =>
-    boundaries.min < latitude && boundaries.max > latitude;
 
   let isWithinBoundaries = (boundaries, data) => boundaries.min < data && boundaries.max > data;
 
