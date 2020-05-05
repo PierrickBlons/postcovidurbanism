@@ -91,6 +91,62 @@ describe("Types", () => {
           true,
         )
       });
-    })
-  })
+    });
+
+    describe("isWithinLatitudeBoundaries", () => {
+      let someBoundaries = {
+        max: 90.->Coordinate.latitude_from_float,
+        min: (-90.)->Coordinate.latitude_from_float,
+      };
+
+      let assertIsWithinLatitudeBoundaries = (latitude, result) => {
+        expect(Coordinate.isWithinLatitudeBoundaries(someBoundaries, latitude->Coordinate.latitude_from_float)) 
+        |> toEqual(result);
+      };
+
+      test("Gives false when latitude is below boundaries min", () => {
+        assertIsWithinLatitudeBoundaries(-100., false);
+      });
+
+      test("Gives false when latitude is above boundaries max", () => {
+        assertIsWithinLatitudeBoundaries(100., false);
+      });
+
+      test("Gives true when latitude is above boundaries min", () => {
+        assertIsWithinLatitudeBoundaries(10., true);
+      });
+
+      test("Gives true when latitude is below boundaries max", () => {
+        assertIsWithinLatitudeBoundaries(80., true);
+      });
+    });
+
+    describe("isWithinLongitudeBoundaries", () => {
+      let someLongitudeBoundaries = {
+        max: 90.->Coordinate.longitude_from_float,
+        min: (-90.)->Coordinate.longitude_from_float,
+      };
+
+      let assertIsWithinLongitudeBoundaries = (longitude, result) => {
+        expect(Coordinate.isWithinLongitudeBoundaries(someLongitudeBoundaries, longitude->Coordinate.longitude_from_float)) 
+        |> toEqual(result);
+      };
+
+      test("Gives false when longitude is below boundaries min", () => {
+        assertIsWithinLongitudeBoundaries(-100., false);
+      });
+
+      test("Gives false when longitude is above boundaries max", () => {
+        assertIsWithinLongitudeBoundaries(100., false);
+      });
+
+      test("Gives true when longitude is above boundaries min", () => {
+        assertIsWithinLongitudeBoundaries(10., true);
+      });
+
+      test("Gives true when longitude is below boundaries max", () => {
+        assertIsWithinLongitudeBoundaries(80., true);
+      });
+    });
+  });
 });
