@@ -4,7 +4,7 @@ open Types;
 
 describe("Types", () => {
   describe("Coordinate", () => {
-    describe("isvalid", () => {
+    describe("isWithinBox", () => {
       let latitudeBoundaries = {
         max: 90.->Coordinate.latitude_from_float,
         min: (-90.)->Coordinate.latitude_from_float,
@@ -19,7 +19,7 @@ describe("Types", () => {
 
       let assertIsValid = (coordinate, result) => {
         expect(
-          Coordinate.isValid(
+          Coordinate.isWithinBox(
             boundaryBox,
             coordinate,
           ),

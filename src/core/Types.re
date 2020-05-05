@@ -22,7 +22,7 @@ module type Coordinate = {
   let longitude_from_float: float => longitude;
   let altitude_from_float: float => altitude;
 
-  let isValid: (boundaryBox(longitude, latitude), t) => bool;
+  let isWithinBox: (boundaryBox(longitude, latitude), t) => bool;
 };
 
 module Coordinate: Coordinate = {
@@ -39,7 +39,7 @@ module Coordinate: Coordinate = {
   let longitude_from_float = lat => lat;
   let altitude_from_float = lat => lat;
 
-  let isValid =
+  let isWithinBox =
       ({longitudeBoundaries, latitudeBoundaries}, (longitude, latitude, _)) => {
     switch (
       longitudeBoundaries.max > longitude,
