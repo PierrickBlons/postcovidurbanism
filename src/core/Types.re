@@ -3,6 +3,11 @@ type boundaries('a) = {
   max: 'a,
 };
 
+type boundaryBox('a, 'b) = {
+  longitudeBoundaries: boundaries('a),
+  latitudeBoundaries: boundaries('b),
+};
+
 module type Coordinate = {
   [@decco]
   type latitude;
@@ -17,7 +22,7 @@ module type Coordinate = {
   let longitude_from_float: float => longitude;
   let altitude_from_float: float => altitude;
 
-  let isValid: (boundaries(longitude), boundaries(latitude), t) => bool;
+  let isValid: (boundaryBox(longitude, latitude), t) => bool;
 };
 
 module Coordinate: Coordinate = {
@@ -35,7 +40,7 @@ module Coordinate: Coordinate = {
   let altitude_from_float = lat => lat;
 
   let isValid =
-      (longitudeBoundaries, latitudeBoundaries, (longitude, latitude, _)) => {
+      ({longitudeBoundaries, latitudeBoundaries}, (longitude, latitude, _)) => {
     switch (
       longitudeBoundaries.max > longitude,
       longitudeBoundaries.min < longitude,

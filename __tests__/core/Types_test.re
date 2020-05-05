@@ -15,11 +15,12 @@ describe("Types", () => {
         min: (-180.)->Coordinate.longitude_from_float,
       };
 
+      let boundaryBox = { longitudeBoundaries, latitudeBoundaries };
+
       let assertIsValid = (coordinate, result) => {
         expect(
           Coordinate.isValid(
-            longitudeBoundaries,
-            latitudeBoundaries,
+            boundaryBox,
             coordinate,
           ),
         )
