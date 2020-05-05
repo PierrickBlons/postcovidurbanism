@@ -82,6 +82,23 @@ describe("Types", () => {
         )
         |> toEqual(false)
       });
+
+      test(
+        "Gives true when coordinate latitude is between boundaries latitude min and max and coordinate longitude is between boudaries longitude min and max",
+        () => {
+        expect(
+          Coordinate.isValid(
+            longitudeBoundaries,
+            latitudeBoundaries,
+            (
+              12.->Coordinate.longitude_from_float,
+              (-42.)->Coordinate.latitude_from_float,
+              0.->Coordinate.altitude_from_float,
+            ),
+          ),
+        )
+        |> toEqual(true)
+      });
     })
   })
 });
