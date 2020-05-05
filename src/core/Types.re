@@ -2,6 +2,7 @@ type boundaries('a) = {
   min: 'a,
   max: 'a,
 };
+
 module type Coordinate = {
   [@decco]
   type latitude;

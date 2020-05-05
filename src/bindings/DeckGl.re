@@ -18,6 +18,7 @@ module Layers = {
       geometry: Types.geometry,
       properties: property,
     };
+    
     let defaultFeature = {
       _type: "Feature",
       geometry: {
