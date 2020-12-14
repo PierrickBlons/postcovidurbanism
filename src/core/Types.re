@@ -2,6 +2,12 @@ type boundaries('a) = {
   min: 'a,
   max: 'a,
 };
+
+type boundaryBox('a, 'b) = {
+  longitudeBoundaries: boundaries('a),
+  latitudeBoundaries: boundaries('b),
+};
+
 module type Coordinate = {
   [@decco]
   type latitude;
@@ -16,7 +22,8 @@ module type Coordinate = {
   let longitude_from_float: float => longitude;
   let altitude_from_float: float => altitude;
 
-  let isValid: (boundaries(longitude), boundaries(latitude), t) => bool;
+  let isWithinBoundaries: (boundaries('a), 'a) => bool;
+  let isWithinBox: (boundaryBox(longitude, latitude), t) => bool;
 };
 
 module Coordinate: Coordinate = {
@@ -30,18 +37,18 @@ module Coordinate: Coordinate = {
   type t = (longitude, latitude, altitude);
 
   let latitude_from_float = lat => lat;
-  let longitude_from_float = lat => lat;
+  let longitude_from_float = long => long;
   let altitude_from_float = lat => lat;
 
-  let isValid =
-      (longitudeBoundaries, latitudeBoundaries, (longitude, latitude, _)) => {
+  let isWithinBoundaries = (boundaries, data) => boundaries.min < data && boundaries.max > data;
+
+  let isWithinBox =
+      ({longitudeBoundaries, latitudeBoundaries}, (longitude, latitude, _)) => {
     switch (
-      longitudeBoundaries.max > longitude,
-      longitudeBoundaries.min < longitude,
-      latitudeBoundaries.max > latitude,
-      latitudeBoundaries.min < latitude,
+      isWithinBoundaries(longitudeBoundaries, longitude),
+      isWithinBoundaries(latitudeBoundaries, latitude),
     ) {
-    | (true, true, true, true) => true
+    | (true, true) => true
     | _ => false
     };
   };
